@@ -1,0 +1,113 @@
+# Site settings
+title: "Beyond the Bus Factor"
+description: "Building resilient projects that survive beyond any individual contributor"
+url: "https://beyondthebusfactor.org"
+baseurl: ""
+repository: "beyond-the-bus-factor/resilience-resources"
+
+# Theme
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "air" # clean, modern look
+
+# Site logo
+logo: "/assets/images/logo.png" # Add a logo (optional)
+
+# Masthead
+masthead_title: "Beyond the Bus Factor"
+
+# Site footer
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/beyond-the-bus-factor"
+    - label: "Resources"
+      icon: "fas fa-fw fa-book"
+      url: "https://github.com/beyond-the-bus-factor/resilience-resources"
+
+# Social sharing
+twitter:
+  username: "rcheesley"
+social:
+  type: Organization
+  name: Beyond the Bus Factor
+  links:
+    - "https://github.com/beyond-the-bus-factor"
+
+# Site author
+author:
+  name: "Ruth Cheesley"
+  avatar: "/assets/images/ruth-avatar.png" # optional
+  bio: "Project Lead, Mautic. Building sustainable open source communities."
+  links:
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://ruthcheesley.co.uk"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/beyond-the-bus-factor"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/ruthcheesley"
+
+# Reading files
+include:
+  - _pages
+
+# Collections
+collections:
+  sessions:
+    output: true
+    permalink: /:collection/:path/
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: false
+  # _sessions
+  - scope:
+      path: ""  # ← Empty string when using type
+      type: sessions
+    values:
+      layout: single
+      author_profile: false
+
+
+# Analytics (optional)
+# analytics:
+#   provider: "google-gtag"
+#   google:
+#     tracking_id: "G-XXXXXXXXXX"
+
+# Comments via Giscus (GitHub Discussions)
+#comments:
+#  provider: "giscus"
+#  giscus:
+#    repo_id: # Your repo ID
+#    category_name: "Website Comments"
+#    category_id: # Your category ID
+#    discussion_term: "pathname"
+#    reactions_enabled: "1"
+#    theme: "light"
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-include-cache

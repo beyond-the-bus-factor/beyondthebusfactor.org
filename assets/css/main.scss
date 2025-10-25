@@ -1,0 +1,46 @@
+---
+# Only the main Sass file needs front matter (the dashes are required)
+---
+
+@charset "utf-8";
+
+// Custom colour variables
+$primary-color: #667eea !default;        // Purple-blue (main brand colour)
+$secondary-color: #764ba2 !default;      // Deeper purple
+$accent-color: #2c3e50 !default;         // Dark blue-grey
+$link-color: #667eea !default;           // Link colour
+$link-color-hover: #5568d3 !default;     // Link hover (darker purple-blue)
+$background-color: #ffffff !default;     // Page background
+$text-color: #333333 !default;           // Body text
+$muted-text-color: #586069 !default;     // Secondary text
+$border-color: #e1e4e8 !default;         // Borders
+
+// Override Minimal Mistakes default colours
+$masthead-link-color: $primary-color !default;
+$masthead-link-color-hover: $link-color-hover !default;
+
+// Import the theme
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+// Custom overrides after importing theme
+.btn--primary {
+  background-color: $primary-color;
+  
+  &:hover {
+    background-color: $link-color-hover;
+  }
+}
+
+.page__hero--overlay {
+  background-color: $accent-color;
+}
+
+.archive__item-title a {
+  color: $link-color;
+  
+  &:hover {
+    color: $link-color-hover;
+  }
+}
+    

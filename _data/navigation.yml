@@ -1,0 +1,11 @@
+main:
+  - title: "Resources"
+    url: /resources/
+  - title: "Workshops"
+    url: /sessions/
+  - title: "About"
+    url: /about/
+  - title: "Contact"
+    url: /contact/
+  - title: "GitHub"
+    url: https://github.com/beyond-the-bus-factor/resilience-resources
