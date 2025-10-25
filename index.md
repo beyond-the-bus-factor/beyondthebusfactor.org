@@ -16,24 +16,24 @@ intro:
 feature_row:
   - image_path: /assets/images/audit.svg
     alt: "Bus Factor Audit"
-    title: "Audit Your Vulnerabilities"
+    title: "Audit your vulnerabilities"
     excerpt: "Identify single points of failure across technical systems, governance, and community relationships"
     url: "https://github.com/beyond-the-bus-factor/resilience-resources/blob/main/resources/bus-factor-audit.md"
-    btn_label: "Use the Framework"
+    btn_label: "Use the framework"
     btn_class: "btn--primary"
   - image_path: /assets/images/checklist.svg
     alt: "Legacy Checklist"
-    title: "Prepare for the Unexpected"
+    title: "Prepare for the unexpected"
     excerpt: "The uncomfortable but essential checklist for what happens if you die or become suddenly incapacitated"
     url: "https://github.com/beyond-the-bus-factor/resilience-resources/blob/main/resources/legacy-checklist.md"
-    btn_label: "Get the Checklist"
+    btn_label: "Get the checklist"
     btn_class: "btn--primary"
   - image_path: /assets/images/succession.svg
-    alt: "Succession Planning"
-    title: "Plan for Transitions"
+    alt: "Succession planning"
+    title: "Plan for transitions"
     excerpt: "Templates for technical handoffs, governance changes, and building sustainable leadership"
     url: "https://github.com/beyond-the-bus-factor/resilience-resources/blob/main/resources/succession-planning-guide.md"
-    btn_label: "Start Planning"
+    btn_label: "Start planning"
     btn_class: "btn--primary"
 ---
 
@@ -41,7 +41,7 @@ feature_row:
 
 {% include feature_row %}
 
-## Upcoming Events
+## Upcoming events
 
 <div class="events-list">
   {% for session in site.sessions %}
@@ -62,7 +62,7 @@ feature_row:
 
 ---
 
-## Why This Matters
+## Why this matters
 
 Most open source projects fail not because the technology is bad, but because key people leave and nobody knows how to continue.
 
