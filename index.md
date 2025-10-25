@@ -23,7 +23,7 @@ feature_row:
     btn_class: "btn--primary"
   - image_path: /assets/images/checklist.svg
     alt: "Legacy Checklist"
-    title: "Prepare for the unexpected"
+    title: "Plan ahead"
     excerpt: "The uncomfortable but essential checklist for what happens if you die or become suddenly incapacitated"
     url: "https://github.com/beyond-the-bus-factor/resilience-resources/blob/main/resources/legacy-checklist.md"
     btn_label: "Get the checklist"
@@ -31,7 +31,7 @@ feature_row:
   - image_path: /assets/images/succession.svg
     alt: "Succession planning"
     title: "Plan for transitions"
-    excerpt: "Templates for technical handoffs, governance changes, and building sustainable leadership"
+    excerpt: "Templates for technical handoffs, governance changes, leadership changes and building sustainable leadership"
     url: "https://github.com/beyond-the-bus-factor/resilience-resources/blob/main/resources/succession-planning-guide.md"
     btn_label: "Start planning"
     btn_class: "btn--primary"
