@@ -19,9 +19,17 @@
   if (!usable(DATA)) {
     var warn = document.createElement('p');
     warn.className = 'tool-fallback';
-    warn.innerHTML = 'The card data could not be loaded. All the scenarios are readable in ' +
-      '<a href="{{ site.repo_resources }}/blob/main/resources/scenario-cards.md">the scenario cards document</a>, ' +
-      'and the <a href="{{ site.repo_resources }}/raw/main/deck/scenario-deck.pdf">printable deck</a> is a PDF.';
+    var link = function (href, text) {
+      var a = document.createElement('a');
+      a.href = href;
+      a.textContent = text;
+      return a;
+    };
+    warn.appendChild(document.createTextNode('The card data could not be loaded. All the scenarios are readable in '));
+    warn.appendChild(link('{{ site.repo_resources }}/blob/main/resources/scenario-cards.md', 'the scenario cards document'));
+    warn.appendChild(document.createTextNode(', and the '));
+    warn.appendChild(link('{{ site.repo_resources }}/raw/main/deck/scenario-deck.pdf', 'printable deck'));
+    warn.appendChild(document.createTextNode(' is a PDF.'));
     mount.textContent = '';
     mount.appendChild(warn);
     return;
