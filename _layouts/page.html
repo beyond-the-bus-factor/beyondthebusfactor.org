@@ -2,7 +2,7 @@
 layout: default
 ---
 <article class="page">
-  <div class="wrap narrow">
+  <div class="wrap {% if page.wide or page.body_class == "cards-tool" %}medium{% else %}narrow{% endif %}">
     <header class="page-head">
       {% if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif %}
       <h1>{{ page.title }}</h1>
@@ -11,3 +11,4 @@ layout: default
     <div class="prose">{{ content }}</div>
   </div>
 </article>
+{% if page.body_class == 'cards-tool' %}<script src="{{ '/assets/js/cards.js' | relative_url }}" defer></script>{% endif %}

@@ -44,7 +44,7 @@
   time: "45 to 90 minutes"
   file: "scenario-cards.md"
   featured: true
-  summary: "Fifteen situations to put in front of a team and work through before one of them actually happens. The sudden disappearance, the burnout announcement, the founder who will not let go."
+  summary: "Twenty five situations to put in front of a team and work through before one of them actually happens. The sudden disappearance, the sole signatory, the founder who will not let go."
   use_when: "You want to stress test resilience with other people in the room."
 
 - slug: sunsetting-a-project
@@ -55,3 +55,12 @@
   file: "sunsetting-a-project.md"
   summary: "How to close something down well. Deciding when the time has come, communicating it without burning the relationships, making a final release, and archiving rather than deleting."
   use_when: "Continuing is no longer the right answer."
+
+- slug: facilitator-guide
+  title: "Facilitator's guide"
+  kind: "Workshop"
+  icon: "guide"
+  time: "Reference"
+  file: "facilitator-guide.md"
+  summary: "How to run a scenario session when you have never run one before. Formats from forty five minutes to half a day, what to do when a group argues with the scenario, and how to close so that something actually changes."
+  use_when: "You are running the session rather than sitting in it."
