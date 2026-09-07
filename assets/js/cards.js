@@ -9,6 +9,24 @@
   var tpl = document.getElementById('tool-tpl');
   if (!mount || !tpl) return;
 
+  /* Check the data before clearing the mount point. The no-JavaScript
+     fallback lives inside it, and wiping that first would turn a bad data
+     file into a blank page with nothing to click. */
+  function usable(d) {
+    return d && d.sectors && d.categories && d.difficulty &&
+      Array.isArray(d.scenarios) && d.scenarios.length > 0;
+  }
+  if (!usable(DATA)) {
+    var warn = document.createElement('p');
+    warn.className = 'tool-fallback';
+    warn.innerHTML = 'The card data could not be loaded. All the scenarios are readable in ' +
+      '<a href="{{ site.repo_resources }}/blob/main/resources/scenario-cards.md">the scenario cards document</a>, ' +
+      'and the <a href="{{ site.repo_resources }}/raw/main/deck/scenario-deck.pdf">printable deck</a> is a PDF.';
+    mount.textContent = '';
+    mount.appendChild(warn);
+    return;
+  }
+
   mount.textContent = '';
   mount.appendChild(tpl.content.cloneNode(true));
 
@@ -132,23 +150,63 @@
     try { ta.value = localStorage.getItem(key) || ''; } catch (e) {}
     var saved = el('span', 'scard-saved', '');
     ta.addEventListener('input', function () {
-      try { localStorage.setItem(key, ta.value); saved.textContent = 'Saved'; } catch (e) {}
+      try {
+        localStorage.setItem(key, ta.value);
+        saved.textContent = 'Saved in this browser';
+        saved.removeAttribute('data-state');
+      } catch (e) {
+        saved.textContent = 'Not saved, this browser is blocking storage. Copy your notes before leaving.';
+        saved.setAttribute('data-state', 'error');
+      }
     });
     box.appendChild(ta);
 
     var actions = el('p', 'scard-actions');
     var copy = el('button', 'btn btn-ghost btn-sm', 'Copy scenario and notes');
     copy.type = 'button';
-    copy.addEventListener('click', function () {
-      var text = s.title + '\n' + s.summary + '\n\n' +
+
+    function assemble() {
+      return s.title + '\n' + s.summary + '\n\n' +
         s.situation.join('\n\n') + '\n\nQuestions to work through\n' +
         s.questions.map(function (q) { return '- ' + q; }).join('\n') +
         '\n\nWhat we could not answer\n' + (ta.value || '(nothing written down yet)') +
         '\n\nFrom beyondthebusfactor.org, released under CC0.';
-      navigator.clipboard.writeText(text).then(function () {
-        copy.textContent = 'Copied';
-        setTimeout(function () { copy.textContent = 'Copy scenario and notes'; }, 2000);
-      });
+    }
+
+    function done() {
+      saved.removeAttribute('data-state');
+      copy.textContent = 'Copied';
+      setTimeout(function () { copy.textContent = 'Copy scenario and notes'; }, 2000);
+    }
+
+    /* The clipboard API is absent over plain http and can reject on a
+       permission prompt or inside an embedded context. Rather than failing
+       with no feedback, put the text in a box and select it so the reader
+       can copy it themselves. */
+    function fallback() {
+      saved.textContent = 'Could not copy for you. The text is selected below, press the copy key.';
+      saved.setAttribute('data-state', 'error');
+      var out = box.querySelector('.scard-copy-fallback');
+      if (!out) {
+        out = document.createElement('textarea');
+        out.className = 'scard-copy-fallback';
+        out.rows = 6;
+        out.setAttribute('aria-label', 'Scenario and notes, ready to copy');
+        box.appendChild(out);
+      }
+      out.value = assemble();
+      out.focus();
+      out.select();
+    }
+
+    copy.addEventListener('click', function () {
+      var text = assemble();
+      if (!navigator.clipboard || !navigator.clipboard.writeText) { fallback(); return; }
+      try {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } catch (e) {
+        fallback();
+      }
     });
     actions.appendChild(copy);
     actions.appendChild(saved);
