@@ -1,0 +1,57 @@
+- slug: bus-factor-audit
+  title: "Bus factor audit"
+  kind: "Framework"
+  icon: "audit"
+  time: "60 to 90 minutes"
+  file: "bus-factor-audit.md"
+  featured: true
+  summary: "Score every part of your operation by how many people could actually pick it up tomorrow. Covers technical systems, governance and decision making, and the relationships nobody has written down."
+  use_when: "You suspect you have single points of failure but cannot say where."
+
+- slug: succession-planning-guide
+  title: "Succession planning guide"
+  kind: "Templates"
+  icon: "succession"
+  time: "Ongoing"
+  file: "succession-planning-guide.md"
+  featured: true
+  summary: "Timelines and handoff checklists for the three shapes a departure takes: the planned exit, the sudden absence, and the slow handover that runs over a year or more."
+  use_when: "Someone is stepping back, or you want a plan before anyone does."
+
+- slug: legacy-checklist
+  title: "Legacy checklist"
+  kind: "Checklist"
+  icon: "checklist"
+  time: "2 to 3 hours"
+  file: "legacy-checklist.md"
+  featured: true
+  summary: "What to put in place in case you die or are suddenly unable to work. Access, credentials, who announces it, what they say, and who holds the authority to decide anything at all."
+  use_when: "You hold access or knowledge that nobody else has."
+
+- slug: set-up-legacy-contacts
+  title: "Setting up legacy contacts"
+  kind: "Practical guide"
+  icon: "contacts"
+  time: "1 hour"
+  file: "set-up-legacy-contacts.md"
+  summary: "Platform by platform instructions for naming someone who can reach your accounts if you cannot. Code hosting, social media, password managers, Apple, Google and Samsung."
+  use_when: "You want the immediate risks covered this afternoon."
+
+- slug: scenario-cards
+  title: "Scenario cards"
+  kind: "Workshop"
+  icon: "cards"
+  time: "45 to 90 minutes"
+  file: "scenario-cards.md"
+  featured: true
+  summary: "Fifteen situations to put in front of a team and work through before one of them actually happens. The sudden disappearance, the burnout announcement, the founder who will not let go."
+  use_when: "You want to stress test resilience with other people in the room."
+
+- slug: sunsetting-a-project
+  title: "Sunsetting a project"
+  kind: "Practical guide"
+  icon: "sunset"
+  time: "Reference"
+  file: "sunsetting-a-project.md"
+  summary: "How to close something down well. Deciding when the time has come, communicating it without burning the relationships, making a final release, and archiving rather than deleting."
+  use_when: "Continuing is no longer the right answer."

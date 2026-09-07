@@ -1,102 +1,54 @@
 ---
-layout: single
-title: "Get in Touch"
+title: "Get in touch"
 permalink: /contact/
+eyebrow: "Workshops, training and advisory"
+standfirst: "For a session at your event, training for your team, or support with a transition already underway."
 ---
 
-## Bring Beyond the Bus Factor to Your Event
-
-Interested in a workshop or talk for your conference, organisation, or community?
-
-**Available formats:**
-- 45-minute interactive workshop (unconference style)
-- 30-minute conference talk
-- Half-day or full-day training
-- Custom consulting for specific transitions
-
-## Contact
-
-<form action="https://formspree.io/f/xzzkpdrd" method="POST" class="contact-form">
-  <div class="form-group">
-    <label for="name">Name *</label>
+<form action="{{ site.contact_form }}" method="POST" class="form">
+  <div class="field">
+    <label for="name">Name</label>
     <input type="text" id="name" name="name" required>
   </div>
-  
-  <div class="form-group">
-    <label for="email">Email *</label>
+  <div class="field">
+    <label for="email">Email</label>
     <input type="email" id="email" name="_replyto" required>
   </div>
-  
-  <div class="form-group">
+  <div class="field">
     <label for="organisation">Organisation</label>
     <input type="text" id="organisation" name="organisation">
   </div>
-  
-  <div class="form-group">
-    <label for="interest">I'm interested in... *</label>
-    <select id="interest" name="interest" required>
+  <div class="field">
+    <label for="sector">What kind of organisation</label>
+    <select id="sector" name="sector">
       <option value="">Please select</option>
-      <option value="workshop">Workshop at my event</option>
-      <option value="talk">Conference talk</option>
-      <option value="training">Team training</option>
-      <option value="consulting">Consulting/advisory</option>
-      <option value="courses">Paid courses (when available)</option>
+      <option value="open-source">Open source project or community</option>
+      <option value="charity">Charity, NGO or nonprofit</option>
+      <option value="company">Company</option>
+      <option value="small-team">Small team, collective or volunteer group</option>
       <option value="other">Something else</option>
     </select>
   </div>
-  
-  <div class="form-group">
-    <label for="message">Message *</label>
+  <div class="field">
+    <label for="interest">What you are after</label>
+    <select id="interest" name="interest" required>
+      <option value="">Please select</option>
+      <option value="workshop">A workshop at my event</option>
+      <option value="talk">A conference talk</option>
+      <option value="training">Training for my team</option>
+      <option value="advisory">Advisory support for a transition</option>
+      <option value="other">Something else</option>
+    </select>
+  </div>
+  <div class="field">
+    <label for="message">Message</label>
     <textarea id="message" name="message" rows="6" required></textarea>
   </div>
-  
-  <button type="submit" class="btn btn--primary">Send Message</button>
+  <button type="submit" class="btn btn-primary">Send</button>
 </form>
 
-<style>
-.contact-form {
-  max-width: 600px;
-  margin: 2rem 0;
-}
+## Other ways to reach this work
 
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #d1d5da;
-  border-radius: 4px;
-  font-size: 1rem;
-  font-family: inherit;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: #0366d6;
-  box-shadow: 0 0 0 3px rgba(3,102,214,0.1);
-}
-</style>
-
----
-
-## Other Ways to Connect
-
-**Join the community:**
-- [GitHub Discussions](https://github.com/beyond-the-bus-factor/resilience-resources/discussions)
-- [Contribute on GitHub](https://github.com/beyond-the-bus-factor/resilience-resources)
-
-**Follow the project:**
-- Star the [resilience-resources repo](https://github.com/beyond-the-bus-factor/resilience-resources)
-- Watch for updates and new resources
+- [Ask a question or start a discussion]({{ site.repo_resources }}/discussions)
+- [Report something unclear or propose a resource]({{ site.repo_resources }}/issues/new/choose)
+- [Watch the repository]({{ site.repo_resources }}) for new material

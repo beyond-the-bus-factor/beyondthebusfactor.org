@@ -1,0 +1,22 @@
+---
+layout: default
+---
+{% assign today = site.time | date: "%Y-%m-%d" %}
+{% assign event = page.event_date | date: "%Y-%m-%d" %}
+<article class="page">
+  <div class="wrap narrow">
+    <header class="page-head">
+      <p class="eyebrow">{% if event < today %}Past session{% else %}Upcoming session{% endif %}</p>
+      <h1>{{ page.title }}</h1>
+      {% if page.excerpt %}<p class="standfirst">{{ page.excerpt | strip_html | strip_newlines }}</p>{% endif %}
+      <dl class="meta">
+        <div><dt>Event</dt><dd>{{ page.event_name }}</dd></div>
+        <div><dt>Date</dt><dd>{{ page.event_date | date: "%-d %B %Y" }}</dd></div>
+        <div><dt>Location</dt><dd>{{ page.location }}</dd></div>
+        <div><dt>Format</dt><dd>{{ page.duration }}</dd></div>
+      </dl>
+    </header>
+    <div class="prose">{{ content }}</div>
+    <p class="back"><a href="{{ '/sessions/' | relative_url }}">All workshops and sessions</a></p>
+  </div>
+</article>
