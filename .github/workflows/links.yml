@@ -1,9 +1,10 @@
-name: External links
+name: Weekly rot check
 
 # Weekly rather than per pull request. Most of this site's substance lives in
-# the resilience-resources repository, so its likeliest failure is a link to a
-# file renamed over there, which happens between our commits rather than in
-# them. A flaky network should not block a merge either.
+# the resilience-resources repository, so its likeliest failures happen
+# between our commits rather than in them: a file renamed over there, or the
+# house style rules changing at their source. A flaky network should not
+# block a merge either.
 on:
   schedule:
     - cron: '0 7 * * 1'
@@ -22,4 +23,15 @@ jobs:
         with:
           python-version: '3.12'
       - run: bundle exec jekyll build
-      - run: python3 script/check-external-links.py
+      - name: Check external links
+        run: python3 script/check-external-links.py
+      - name: Confirm the house style rules still match the canonical copy
+        run: |
+          curl -fsSL -o /tmp/canonical \
+            https://raw.githubusercontent.com/beyond-the-bus-factor/resilience-resources/main/.house-style
+          strip() { grep -vE '^[[:space:]]*(#|$)' "$1"; }
+          if ! diff <(strip .house-style) <(strip /tmp/canonical); then
+            echo "::error::.house-style has drifted from resilience-resources. Copy it across."
+            exit 1
+          fi
+          echo "House style rules match the canonical copy."

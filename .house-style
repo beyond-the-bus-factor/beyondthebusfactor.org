@@ -1,0 +1,25 @@
+# House style rules that CI enforces.
+#
+# This is a copy. The canonical version lives in the resilience-resources
+# repository, which is where most of the writing happens. The weekly
+# external links workflow checks this copy still matches it, so the two
+# cannot drift apart without somebody being told.
+#
+# Kept here rather than inside the checker so that the rules are data a
+# contributor can read and propose changes to, and so that the file doing
+# the enforcing does not have to contain the words it rejects.
+#
+# These apply to everything in the repository, prose and source alike. A rule
+# about how we write is not suspended inside a docstring, a comment or a
+# button label.
+#
+# One rule per line, as "text = why". Lines starting with # are ignored.
+#
+# To exempt a line that has to contain a banned word, a test fixture
+# demonstrating the rule for instance, put "house-style: allow" in a comment
+# on that line.
+
+quietly = house style
+genuinely = house style
+honest = house style, and honestly, honesty, dishonest with it
+— = em dash, use a comma or a full stop or rewrite the sentence
