@@ -43,11 +43,11 @@ layout: default
     <aside class="sectors">
       <p class="sectors-head">Written for four kinds of organisation</p>
       <ul>
-        <li><strong>Open source projects</strong><span>Maintainers, release keys, governance and forks</span></li>
-        <li><strong>Charities and NGOs</strong><span>Trustees, funders, regulators and safeguarding leads</span></li>
-        <li><strong>Companies</strong><span>The key person risk your continuity plan does not cover</span></li>
-        <li><strong>Small teams and collectives</strong><span>Where one person holds most of the operation</span></li>
+        {% for s in site.data.sectors %}
+        <li><strong>{{ s.name }}</strong><span>{{ s.blurb }}</span></li>
+        {% endfor %}
       </ul>
+      <p class="sectors-more"><a class="more" href="{{ '/sectors/' | relative_url }}">Read the overlays {% include icon.html name='arrow' %}</a></p>
     </aside>
   </div>
 </section>

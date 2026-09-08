@@ -579,3 +579,18 @@ p { margin: 0 0 1.1em; }
   background: var(--surface); border: 1px dashed var(--rule);
   border-radius: var(--radius); color: var(--ink-2);
 }
+
+.card-failure {
+  margin-top: 0.9rem; padding-top: 0.9rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.9rem; color: var(--ink-2);
+}
+.card-failure strong { color: var(--accent); }
+.sectors-more { margin: 1.1rem 0 0; padding-top: 1rem; border-top: 1px solid var(--rule); }
+
+/* Components dropped into a prose column keep their own spacing. The prose
+   rhythm is for flowing text, and its heading top margin reads as a gap
+   when the heading is the second line of a card. */
+.prose .card h3,
+.prose .sessions h3,
+.prose .scard h3 { margin-top: 0; }

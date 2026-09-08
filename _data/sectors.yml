@@ -1,0 +1,30 @@
+# Sector overlays for the bus factor audit. One per sector in the taxonomy
+# used by the scenario deck, defined in tools/scenarios.py in the
+# resilience-resources repository. Keep the keys in step with that file.
+- slug: open-source
+  name: "Open source projects"
+  file: "open-source.md"
+  icon: "audit"
+  blurb: "Maintainers, release keys, governance and what a fork really tests."
+  failure: "Ownership resting in a personal account. Losing the maintainer does not lose the code, it loses the ability to ship."
+
+- slug: charity
+  name: "Charities and NGOs"
+  file: "charity-ngo.md"
+  icon: "contacts"
+  blurb: "Trustees, funders, regulators and the roles somebody is legally required to hold."
+  failure: "Roles a regulator requires you to name, held by one person with no deputy."
+
+- slug: corporate
+  name: "Companies"
+  file: "company.md"
+  icon: "succession"
+  blurb: "The key person risk your business continuity plan does not cover."
+  failure: "Systems nobody owns, kept alive by somebody who never escalated."
+
+- slug: small-team
+  name: "Small teams and collectives"
+  file: "small-team.md"
+  icon: "guide"
+  blurb: "Where one person carries most of the operation and nobody has ever counted."
+  failure: "Everything ended up in one person's name, and it happened by accident."

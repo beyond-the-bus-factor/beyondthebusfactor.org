@@ -1,0 +1,25 @@
+name: External links
+
+# Weekly rather than per pull request. Most of this site's substance lives in
+# the resilience-resources repository, so its likeliest failure is a link to a
+# file renamed over there, which happens between our commits rather than in
+# them. A flaky network should not block a merge either.
+on:
+  schedule:
+    - cron: '0 7 * * 1'
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: bundle exec jekyll build
+      - run: python3 script/check-external-links.py
