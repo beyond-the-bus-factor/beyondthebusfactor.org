@@ -5,7 +5,8 @@ eyebrow: "What this site does with you"
 standfirst: "Short, because there is not much to say."
 ---
 
-{% if site.analytics.provider %}
+{% capture analytics_on %}{% include analytics-on.html %}{% endcapture %}
+{% if analytics_on == "yes" %}
 ## What is collected
 
 This site counts page views using {% case site.analytics.provider %}{% when "goatcounter" %}[GoatCounter](https://www.goatcounter.com/){% when "cloudflare" %}[Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/){% else %}an analytics service{% endcase %}.

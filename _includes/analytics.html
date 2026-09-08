@@ -7,7 +7,9 @@
   consent banner is needed. If that ever stops being true, this include is
   the wrong place to solve it: get advice first.
 {%- endcomment -%}
-{%- if jekyll.environment == "production" and site.analytics.provider -%}
+{%- assign analytics_on = "" -%}
+{%- capture analytics_on -%}{%- include analytics-on.html -%}{%- endcapture -%}
+{%- if jekyll.environment == "production" and analytics_on == "yes" -%}
   {%- case site.analytics.provider -%}
     {%- when "goatcounter" -%}
       {%- if site.analytics.endpoint -%}
