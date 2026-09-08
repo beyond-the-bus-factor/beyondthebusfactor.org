@@ -26,5 +26,5 @@ These resources came out of that preparation, and out of conversations with a lo
 ## Get involved
 
 - [Explore the resources](https://github.com/beyond-the-bus-factor/resilience-resources)
-- [Come to a workshop](/sessions/)
+- [Come to a workshop]({{ '/sessions/' | relative_url }})
 - [Contribute your experience](https://github.com/beyond-the-bus-factor/resilience-resources/discussions)

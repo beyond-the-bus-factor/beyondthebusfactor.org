@@ -28,5 +28,7 @@ The full facilitation guide is published, so anyone can run this session themsel
 
 ## Resources used
 
-{% for r in site.data.resources %}{% unless r.slug == 'sunsetting-a-project' or r.slug == 'set-up-legacy-contacts' %}
-- [{{ r.title }}]({{ site.repo_resources }}/blob/main/resources/{{ r.file }}){% endunless %}{% endfor %}
+{% assign used = "bus-factor-audit,legacy-checklist,succession-planning-guide,scenario-cards" | split: "," %}
+{% for slug in used %}{% assign r = site.data.resources | where: "slug", slug | first %}
+- [{{ r.title }}]({{ site.repo_resources }}/blob/main/resources/{{ r.file }})
+{%- endfor %}

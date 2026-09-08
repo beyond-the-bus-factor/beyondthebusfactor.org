@@ -43,7 +43,7 @@ The community resources are the foundation and stay free. Alongside them:
 - **Implementation support** for specific transitions
 - **Advisory work** where the situation is complicated
 
-[Get in touch](/contact/) if any of that would help.
+[Get in touch]({{ '/contact/' | relative_url }}) if any of that would help.
 
 ## About me
 

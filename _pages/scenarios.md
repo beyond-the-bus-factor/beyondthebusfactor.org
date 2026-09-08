@@ -29,7 +29,7 @@ It works solo too. Pick the scenario that makes you most uncomfortable and answe
 
 <p class="resource-actions">
   <a class="btn btn-primary" href="{{ site.repo_resources }}/blob/main/resources/scenario-cards.md">Read all fifteen scenarios</a>
-  <a class="btn btn-ghost" href="/contact/">Have a session facilitated</a>
+  <a class="btn btn-ghost" href="{{ '/contact/' | relative_url }}">Have a session facilitated</a>
 </p>
 
 ## Coming next
