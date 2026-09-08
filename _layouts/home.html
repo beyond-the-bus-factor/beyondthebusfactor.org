@@ -2,15 +2,32 @@
 layout: default
 ---
 <section class="hero">
-  <div class="hero-figure" aria-hidden="true"></div>
   <div class="wrap">
-    <p class="eyebrow">{{ page.eyebrow }}</p>
-    <h1>{{ page.heading }}</h1>
-    <p class="hero-lede">{{ page.lede }}</p>
-    <p class="hero-actions">
-      <a class="btn btn-primary" href="{{ '/resources/' | relative_url }}">Browse the resources</a>
-      <a class="btn btn-ghost" href="{{ '/scenarios/' | relative_url }}">Run a scenario session</a>
-    </p>
+    <div class="hero-copy">
+      <p class="eyebrow">{{ page.eyebrow }}</p>
+      <h1>{{ page.heading }}</h1>
+      <p class="hero-lede">{{ page.lede }}</p>
+      <p class="hero-actions">
+        <a class="btn btn-primary" href="{{ '/resources/' | relative_url }}">Browse the resources</a>
+        <a class="btn btn-ghost" href="{{ '/scenarios/' | relative_url }}">Run a scenario session</a>
+      </p>
+    </div>
+    <div class="hero-figure" aria-hidden="true">
+      <svg viewBox="0 0 400 340" role="presentation" focusable="false">
+        <g class="hf-links">
+          <path d="M200 170 L 62 58"/><path d="M200 170 L 152 42"/><path d="M200 170 L 272 52"/>
+          <path d="M200 170 L 352 108"/><path d="M200 170 L 52 152"/><path d="M200 170 L 350 212"/>
+          <path d="M200 170 L 68 254"/><path d="M200 170 L 166 302"/><path d="M200 170 L 288 292"/>
+        </g>
+        <g class="hf-nodes">
+          <circle cx="62" cy="58" r="11"/><circle cx="152" cy="42" r="11"/><circle cx="272" cy="52" r="11"/>
+          <circle cx="352" cy="108" r="11"/><circle cx="52" cy="152" r="11"/><circle cx="350" cy="212" r="11"/>
+          <circle cx="68" cy="254" r="11"/><circle cx="166" cy="302" r="11"/><circle cx="288" cy="292" r="11"/>
+        </g>
+        <circle class="hf-halo" cx="200" cy="170" r="40"/>
+        <circle class="hf-hub" cx="200" cy="170" r="25"/>
+      </svg>
+    </div>
   </div>
 </section>
 

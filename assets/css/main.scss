@@ -225,21 +225,62 @@ p { margin: 0 0 1.1em; }
   position: relative;
   overflow: hidden;
 }
-/* Decorative only. Kept clear of the text column so the contrast of the
-   copy can be computed against a flat colour by people and by linters alike. */
+
+/* The hero is a two column grid rather than absolutely positioned decoration.
+   Laying it out means the figure can never sit over the copy, which is the
+   bug that made the headline's contrast impossible to determine before. */
+.hero .wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.82fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: center;
+}
+.hero-copy { min-width: 0; }
+
+/* Everything routes through one node. Decorative, so it is hidden from
+   assistive technology and the headline carries the meaning. */
 .hero-figure {
-  position: absolute; top: 0; bottom: 0; right: 0;
-  left: clamp(28rem, 52%, 46rem);
+  position: relative;
+  min-width: 0;
+  display: grid; place-items: center;
+}
+/* Scoped to the figure column. Spanning the whole hero would put a pseudo
+   element over the copy, and nothing could then determine the headline's
+   contrast, which is how this broke the first time. */
+.hero-figure::before {
+  content: "";
+  position: absolute; inset: -25% -15%;
   background-image:
     linear-gradient(var(--rule) 1px, transparent 1px),
     linear-gradient(90deg, var(--rule) 1px, transparent 1px);
   background-size: 3.5rem 3.5rem;
-  opacity: 0.5;
-  mask-image: radial-gradient(105% 95% at 78% 8%, #000 0%, transparent 72%);
-  -webkit-mask-image: radial-gradient(105% 95% at 78% 8%, #000 0%, transparent 72%);
+  opacity: 0.45;
+  mask-image: radial-gradient(60% 60% at 50% 50%, #000 0%, transparent 75%);
+  -webkit-mask-image: radial-gradient(60% 60% at 50% 50%, #000 0%, transparent 75%);
   pointer-events: none;
 }
-@media (max-width: 60rem) { .hero-figure { display: none; } }
+.hero-figure svg { position: relative; }
+.hero-figure svg {
+  width: 100%; height: auto;
+  max-width: 26rem;
+}
+.hf-links path {
+  fill: none; stroke: var(--ink-3);
+  stroke-width: 1.25; opacity: 0.45;
+}
+.hf-nodes circle {
+  fill: var(--paper); stroke: var(--ink-3);
+  stroke-width: 1.5; opacity: 0.85;
+}
+.hf-halo { fill: var(--accent); opacity: 0.1; }
+.hf-hub {
+  fill: var(--accent-soft); stroke: var(--accent); stroke-width: 2;
+}
+
+@media (max-width: 60rem) {
+  .hero .wrap { grid-template-columns: 1fr; }
+  .hero-figure { display: none; }
+}
 .hero .wrap { position: relative; z-index: 1; }
 .hero .hero-lede { max-width: 34ch; }
 .hero h1 { max-width: 18ch; }
