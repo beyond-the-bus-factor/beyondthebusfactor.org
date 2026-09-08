@@ -54,16 +54,19 @@ exclude:
   - LICENSE
   - .ruby-version
 
-# Analytics is off until this is filled in. Both options are cookie free and
-# collect no personal data, so neither needs a consent banner. Leave it empty
-# and no third party script is loaded at all.
+# Cloudflare Web Analytics. Cookie free, collects no personal data, so no
+# consent banner is needed. Nothing loads until the token is filled in, and
+# even then only on a production build, so local work does not pollute the
+# numbers.
 #
-#   provider: goatcounter        endpoint: https://YOURCODE.goatcounter.com/count
-#   provider: cloudflare         token: your-web-analytics-token
+# The token comes from the Cloudflare dashboard: Analytics & Logs, then Web
+# Analytics, add beyondthebusfactor.org as a site, and copy the token out of
+# the snippet it gives you. It is not a secret, it identifies the site rather
+# than authenticating anything, so it belongs in this file.
 #
-# It only loads on a production build, so local work does not pollute the numbers.
+# GoatCounter is also supported: provider: goatcounter with an endpoint.
 analytics:
-  provider:
+  provider: cloudflare
   endpoint:
   token:
 

@@ -21,9 +21,8 @@ A line that has to contain a banned word carries `house-style: allow` in a comme
 
 Off by default. Nothing is loaded and nothing is collected until `analytics:` in `_config.yml` names a provider and an id, and even then only on a production build.
 
-Two options are supported, both cookie free and collecting no personal data, so neither needs a consent banner:
+[Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/) is the configured provider. Cookie free, collects no personal data, so no consent banner is needed. Get the token from the Cloudflare dashboard under Analytics and Logs, then Web Analytics, and put it in `_config.yml`. It identifies the site rather than authenticating anything, so it is not a secret.
 
-- [GoatCounter](https://www.goatcounter.com/), open source, free for non-commercial use
-- [Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/), free, needs a Cloudflare account
+[GoatCounter](https://www.goatcounter.com/) is also supported if you ever want to switch.
 
 The [privacy page](_pages/privacy.md) reads the same config, so it describes whatever is actually switched on rather than drifting from it.

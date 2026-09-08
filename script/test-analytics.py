@@ -20,6 +20,10 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONFIG = os.path.join(ROOT, "_config.yml")
 INDEX = os.path.join(ROOT, "_site", "index.html")
 
+# Matches the analytics block whatever it is currently set to, so changing the
+# default provider does not quietly turn this test into a no-op.
+BLOCK = re.compile(r"^analytics:\n(?:[ \t]+\w+:.*\n)+", re.M)
+
 EMPTY = "analytics:\n  provider:\n  endpoint:\n  token:\n"
 GOAT = "analytics:\n  provider: goatcounter\n  endpoint: https://example.goatcounter.com/count\n  token:\n"
 CLOUD = "analytics:\n  provider: cloudflare\n  endpoint:\n  token: example-token\n"
@@ -42,15 +46,15 @@ FAILURES = []
 def main():
     with open(CONFIG, encoding="utf-8") as fh:
         original = fh.read()
-    if EMPTY not in original:
-        print("  FAIL the analytics block in _config.yml is not the shape this test expects,")
-        print("       so it would pass without checking anything. Update the test.")
+    if not BLOCK.search(original):
+        print("  FAIL no analytics block found in _config.yml, so this test would")
+        print("       pass without checking anything. Update the test.")
         return 1
 
     try:
         for label, env, block, expected in CASES:
             with open(CONFIG, "w", encoding="utf-8") as fh:
-                fh.write(original.replace(EMPTY, block))
+                fh.write(BLOCK.sub(block, original, count=1))
             result = subprocess.run(
                 ["bundle", "exec", "jekyll", "build"],
                 cwd=ROOT, env=dict(os.environ, JEKYLL_ENV=env), capture_output=True)
