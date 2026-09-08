@@ -54,6 +54,19 @@ exclude:
   - LICENSE
   - .ruby-version
 
+# Analytics is off until this is filled in. Both options are cookie free and
+# collect no personal data, so neither needs a consent banner. Leave it empty
+# and no third party script is loaded at all.
+#
+#   provider: goatcounter        endpoint: https://YOURCODE.goatcounter.com/count
+#   provider: cloudflare         token: your-web-analytics-token
+#
+# It only loads on a production build, so local work does not pollute the numbers.
+analytics:
+  provider:
+  endpoint:
+  token:
+
 sass:
   style: compressed
 

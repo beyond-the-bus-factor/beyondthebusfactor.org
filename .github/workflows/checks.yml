@@ -44,3 +44,8 @@ jobs:
           npx --yes wait-on http://127.0.0.1:4010/ -t 60000
       - name: Check accessibility
         run: npm run a11y
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check analytics only loads when configured
+        run: python3 script/test-analytics.py
