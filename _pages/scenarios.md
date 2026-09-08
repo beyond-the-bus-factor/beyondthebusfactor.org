@@ -10,7 +10,7 @@ Reading about resilience changes very little. Sitting in a room with the people 
 That is what the scenario cards are for. Each one describes a situation in enough detail to feel real, then asks the questions the situation would ask you.
 
 <p class="resource-actions">
-  <a class="btn btn-primary" href="/scenarios/cards/">Draw a card</a>
+  <a class="btn btn-primary" href="{{ '/scenarios/cards/' | relative_url }}">Draw a card</a>
   <a class="btn btn-ghost" href="{{ site.repo_resources }}/raw/main/deck/scenario-deck.pdf">Printable deck (PDF)</a>
   <a class="btn btn-ghost" href="{{ site.repo_resources }}/blob/main/resources/facilitator-guide.md">Facilitator's guide</a>
 </p>
@@ -37,13 +37,13 @@ It works solo too. Pick the scenario that makes you most uncomfortable and answe
 
 ## Three ways to use them
 
-**[The card tool](/scenarios/cards/)** draws a scenario at random, filtered to the kind of organisation you are, and gives you somewhere to write down what nobody could answer.
+**[The card tool]({{ '/scenarios/cards/' | relative_url }})** draws a scenario at random, filtered to the kind of organisation you are, and gives you somewhere to write down what nobody could answer.
 
 **[The printed deck]({{ site.repo_resources }}/raw/main/deck/scenario-deck.pdf)** is A4, two A5 cards per sheet, with a cover card carrying the instructions. For a room, paper beats a screen.
 
 **[The full document]({{ site.repo_resources }}/blob/main/resources/scenario-cards.md)** has all twenty five scenarios to read straight through.
 
-If you are running the session rather than sitting in it, start with the [facilitator's guide]({{ site.repo_resources }}/blob/main/resources/facilitator-guide.md), or [have one facilitated](/contact/).
+If you are running the session rather than sitting in it, start with the [facilitator's guide]({{ site.repo_resources }}/blob/main/resources/facilitator-guide.md), or [have one facilitated]({{ '/contact/' | relative_url }}).
 
 ## Bring your own
 

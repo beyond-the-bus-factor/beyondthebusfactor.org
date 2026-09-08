@@ -85,6 +85,17 @@
 
   function pool() { return DATA.scenarios.filter(matches); }
 
+  /* A card left on screen after the filters change may no longer match them,
+     and its Draw another button becomes a no-op when the new pool is empty.
+     Clear the stage and say what to do next. */
+  function clearStage(message) {
+    stage.textContent = '';
+    if (message) {
+      var p = el('p', 'tool-prompt', message);
+      stage.appendChild(p);
+    }
+  }
+
   function updateCount() {
     var n = pool().length;
     count.textContent = n === DATA.scenarios.length
@@ -182,7 +193,12 @@
     }
 
     function done() {
+      /* Clear any earlier failure message and its textarea, otherwise the
+         page still says the copy did not work after one that did. */
+      saved.textContent = '';
       saved.removeAttribute('data-state');
+      var stale = box.querySelector('.scard-copy-fallback');
+      if (stale) stale.remove();
       copy.textContent = 'Copied';
       setTimeout(function () { copy.textContent = 'Copy scenario and notes'; }, 2000);
     }
@@ -255,6 +271,9 @@
       .map(function (i) { return i.value; });
     drawn = [];
     updateCount();
+    clearStage(pool().length
+      ? 'Filters changed. Draw a card to continue.'
+      : 'Nothing matches those filters. Widen them, or clear them and start again.');
   });
 
   form.addEventListener('click', function (e) {
@@ -265,6 +284,7 @@
       picked = { sectors: [], categories: [], difficulty: [] };
       drawn = [];
       updateCount();
+      clearStage('Filters cleared. Draw a card to continue.');
     }
   });
 

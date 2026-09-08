@@ -574,3 +574,8 @@ p { margin: 0 0 1.1em; }
   margin: 1.75rem 0 0;
 }
 .scard-progress { font-size: 0.88rem; color: var(--ink-3); }
+.tool-prompt {
+  margin: 0; padding: 1.5rem;
+  background: var(--surface); border: 1px dashed var(--rule);
+  border-radius: var(--radius); color: var(--ink-2);
+}

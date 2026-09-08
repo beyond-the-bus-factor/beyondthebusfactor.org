@@ -25,7 +25,7 @@ standfirst: "Facilitated sessions where teams audit their own exposure and leave
 {% else %}
 ## Coming up
 
-Nothing scheduled at the moment. If you would like a session at your conference, inside your organisation, or for your community group, [get in touch](/contact/).
+Nothing scheduled at the moment. If you would like a session at your conference, inside your organisation, or for your community group, [get in touch]({{ '/contact/' | relative_url }}).
 {% endif %}
 
 ## Formats
