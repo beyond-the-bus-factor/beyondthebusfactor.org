@@ -19,6 +19,7 @@
     "http://127.0.0.1:4010/resources/",
     "http://127.0.0.1:4010/scenarios/",
     "http://127.0.0.1:4010/scenarios/cards/",
+    "http://127.0.0.1:4010/sectors/",
     "http://127.0.0.1:4010/sessions/",
     "http://127.0.0.1:4010/sessions/github-universe-2025/",
     "http://127.0.0.1:4010/about/",

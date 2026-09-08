@@ -3,6 +3,8 @@ main:
     url: /resources/
   - title: "Scenarios"
     url: /scenarios/
+  - title: "Sectors"
+    url: /sectors/
   - title: "Workshops"
     url: /sessions/
   - title: "About"

@@ -8,6 +8,8 @@ body_class: "resources-page"
 
 Most people work through these in order. The audit tells you where you are exposed, the checklist covers the immediate risks, and the succession guide is the longer piece of work.
 
+The audit is written to work whatever you run. Read it alongside the [overlay for your setting]({{ '/sectors/' | relative_url }}), which translates the vocabulary and adds the rows a neutral document cannot carry.
+
 <ul class="resource-list">
 {% for r in site.data.resources %}
   <li id="{{ r.slug }}">
@@ -30,9 +32,9 @@ Most people work through these in order. The audit tells you where you are expos
 
 ## Making these fit your organisation
 
-The resources are written in neutral language and then translated. Each one is being given a short overlay for open source projects, for charities and NGOs, and for companies, covering the terms that change and the risks that only show up in that setting.
+The resources are written in neutral language and then translated. There are [four overlays]({{ '/sectors/' | relative_url }}), for open source projects, charities and NGOs, companies, and small teams. Each covers the terms that change, the risks that only show up in that setting, and the failure it most often turns out to be.
 
-If your sector is not covered well yet, [tell me what is missing]({{ site.repo_resources }}/issues/new/choose). That is how the rest of it got written.
+If your setting is not covered, or one of them gets something wrong, [tell me what is missing]({{ site.repo_resources }}/issues/new/choose). That is how the existing four got written.
 
 ## Contributing
 
