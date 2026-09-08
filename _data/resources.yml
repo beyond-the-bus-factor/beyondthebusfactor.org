@@ -48,13 +48,13 @@
   use_when: "You want to stress test resilience with other people in the room."
 
 - slug: sunsetting-a-project
-  title: "Sunsetting a project"
+  title: "Closing something down"
   kind: "Practical guide"
   icon: "sunset"
   time: "Reference"
   file: "sunsetting-a-project.md"
-  summary: "How to close something down well. Deciding when the time has come, communicating it without burning the relationships, making a final release, and archiving rather than deleting."
-  use_when: "Continuing is no longer the right answer."
+  summary: "How to stop well, which is sometimes the right answer and is almost always done badly. Deciding when the time has come, telling people properly, the last day, and preserving the record rather than destroying it."
+  use_when: "Continuing is no longer the right answer, or you are working out whether it is."
 
 - slug: facilitator-guide
   title: "Facilitator's guide"
