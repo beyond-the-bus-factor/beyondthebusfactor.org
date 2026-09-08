@@ -8,16 +8,22 @@ on:
 
 jobs:
   house-style:
+    name: house style and data
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Check that the checker works
-        run: python3 script/test-check-house-style.py
+      - run: pip install pyyaml
+      - name: Check that the checkers work
+        run: |
+          python3 script/test-check-house-style.py
+          python3 script/test-check-data.py
       - name: Check house style
         run: python3 script/check-house-style.py
+      - name: Check the data files
+        run: python3 script/check-data.py
 
   pa11y:
     runs-on: ubuntu-latest
