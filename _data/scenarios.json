@@ -1,0 +1,814 @@
+{
+ "sectors": {
+  "open-source": "Open source",
+  "charity": "Charity and NGO",
+  "corporate": "Company",
+  "small-team": "Small team"
+ },
+ "categories": {
+  "operational": "Operational",
+  "governance": "Governance, legal and finance",
+  "people": "People and community"
+ },
+ "difficulty": {
+  "1": "Warm up",
+  "2": "Standard",
+  "3": "Hard"
+ },
+ "scenarios": [
+  {
+   "title": "The contractor who built it",
+   "slug": "contractor-who-built-it",
+   "category": "operational",
+   "sectors": [
+    "corporate",
+    "charity",
+    "small-team"
+   ],
+   "difficulty": 2,
+   "minutes": 10,
+   "summary": "The contract ended in March, the invoice is paid, and the only person who understands it has moved on.",
+   "situation": [
+    "Three years ago you paid a contractor to build the system your operations now run on. He was good, he delivered, the contract ended in March last year and the final invoice was paid.",
+    "Since then it has needed nothing. Last week it started failing. Your internal team have looked at it and report that it is competent work, undocumented, written in a framework nobody here uses, and deployed to an account nobody here can name the owner of.",
+    "The domain renews automatically to a card that belonged to someone who has left. The source is in a repository under his personal account, which you have read access to because he added someone by hand, and that someone left too.",
+    "You have emailed him. He replied politely that he is fully booked for the next four months and can do an hour at his current day rate."
+   ],
+   "questions": [
+    "What do you buy with that hour if you take it?",
+    "Who owns the repository, the hosting account and the domain, and can you prove it?",
+    "What did the original contract say about handover, documentation and intellectual property?",
+    "Do you fix this, rebuild it, or replace it, and who decides?",
+    "What goes into the next contract you sign?"
+   ],
+   "think_about": [
+    "Handover as a deliverable with its own acceptance criteria",
+    "Accounts, domains and repositories registered to individuals",
+    "Work that is invisible while it keeps working",
+    "The cost of the cheap option arriving three years late",
+    "Procurement as a bus factor decision"
+   ]
+  },
+  {
+   "title": "The formalised handover",
+   "slug": "formalised-handover",
+   "category": "operational",
+   "sectors": [
+    "open-source",
+    "charity",
+    "corporate"
+   ],
+   "difficulty": 2,
+   "minutes": 12,
+   "summary": "The checklist is complete and the successor is drowning, because the checklist covered the what and none of the why.",
+   "situation": [
+    "You've decided to step down as project lead in six months. You have a documented succession process (inspired by Joomla's leadership transitions) with clear milestones, handoff checklists, and a transition timeline.",
+    "You've identified your successor and they've agreed. The community knows it's happening. Everything should be straightforward.",
+    "But as you work through the handoff checklist, you realise how much critical knowledge isn't actually documented. The 'why' behind technical decisions. The history of community conflicts. The relationships with sponsors. The unwritten rules about how decisions really get made. Your documented process covers the what, but not the how or why.",
+    "Your successor is getting overwhelmed. They're discovering that being project lead isn't only about the formal responsibilities - it's about all the invisible work and institutional knowledge you carry."
+   ],
+   "questions": [
+    "What needs to be in a succession handoff beyond access and responsibilities?",
+    "How do you transfer institutional knowledge and context?",
+    "What's the difference between a checklist and actual readiness?",
+    "How do you make the invisible work visible?",
+    "What does good documentation look like for succession?"
+   ],
+   "think_about": [
+    "Formal vs informal knowledge",
+    "The invisible labour of leadership",
+    "Realistic timelines for handoffs",
+    "Supporting successors through the learning curve",
+    "What can't be documented"
+   ]
+  },
+  {
+   "title": "The sole signatory",
+   "slug": "sole-signatory",
+   "category": "operational",
+   "sectors": [
+    "charity",
+    "small-team"
+   ],
+   "difficulty": 2,
+   "minutes": 10,
+   "summary": "Payroll runs on Thursday and the only person who can authorise it is in intensive care.",
+   "situation": [
+    "Your finance officer has been in a road accident. He is alive, in intensive care, and will not be working for months.",
+    "He is the only person set up on the online banking. He is the only named signatory the bank has on file who is currently active, the second signatory being a trustee who resigned fourteen months ago and was never replaced on the mandate. He runs payroll through a system only he has logged into. He holds the relationship with your accountant and the pension provider.",
+    "Payroll runs on Thursday. Eleven people are paid from it, several of whom cannot absorb a late payment. There is a grant claim due in nine days that requires a finance signature, and if it misses the deadline you lose the money.",
+    "Nobody wants to talk about bank mandates while a colleague is in hospital."
+   ],
+   "questions": [
+    "What do you do in the next twenty four hours to get Thursday's payroll out?",
+    "Who has the authority to change the bank mandate, and how long does that actually take?",
+    "How do you approach his family, and what is reasonable to ask of them?",
+    "What do you tell staff, and what do you keep private?",
+    "Once he is stable, what do you change, and who owns making sure it stays changed?"
+   ],
+   "think_about": [
+    "Bank mandates and authorised signatories as a live risk, not paperwork",
+    "The gap between a policy requiring two signatories and the reality",
+    "Doing the practical thing without treating a colleague as a problem",
+    "Statutory and funder deadlines that do not pause for emergencies",
+    "Reviewing the mandate every time a trustee leaves"
+   ]
+  },
+  {
+   "title": "The sudden disappearance",
+   "slug": "sudden-disappearance",
+   "category": "operational",
+   "sectors": [
+    "open-source",
+    "charity",
+    "corporate",
+    "small-team"
+   ],
+   "difficulty": 2,
+   "minutes": 10,
+   "summary": "Nobody has heard from the one person who can deploy, and a fix cannot wait.",
+   "situation": [
+    "Your lead maintainer hasn't responded to messages in 72 hours. This is completely unlike them - they're usually very responsive. Their phone goes straight to voicemail. You've tried their personal email, work email, chat platforms - nothing. You have no way to reach their family or emergency contacts.",
+    "Your project has a critical security vulnerability that needs to be patched and deployed immediately. Only the missing maintainer has ever done a production deployment."
+   ],
+   "questions": [
+    "What do you do in the first 24 hours?",
+    "Who has the authority to decide what happens next?",
+    "How do you access the systems you need to deploy the fix?",
+    "What do you tell the community?",
+    "How do you handle this if they never return?"
+   ],
+   "think_about": [
+    "Emergency access procedures",
+    "Deployment documentation and access",
+    "Communication protocols",
+    "Who can make emergency decisions"
+   ]
+  },
+  {
+   "title": "The safeguarding lead",
+   "slug": "safeguarding-lead",
+   "category": "operational",
+   "sectors": [
+    "charity"
+   ],
+   "difficulty": 3,
+   "minutes": 12,
+   "summary": "A statutory role, an open case, and the only trained person left on Friday.",
+   "situation": [
+    "Your designated safeguarding lead left on Friday. It was not amicable and she is not taking calls.",
+    "She was the only person in the organisation with the full training. She held two open cases, one of which involves an ongoing referral to the local authority. Her case notes are in a folder on the shared drive that turns out to have restricted permissions, and the person who set those permissions was her.",
+    "Your policy names the designated lead by job title, and that post is now vacant. Your funders require a named lead. Your insurance requires a named lead. Two of your delivery partners will not let volunteers on site without one.",
+    "Your chief executive has done the basic training, four years ago. Your chair asks on Monday morning whether this is something you can leave until the new appointment is made."
+   ],
+   "questions": [
+    "What is your answer to the chair?",
+    "Who is the named lead as of this morning, and what makes that legitimate?",
+    "How do you get access to the case notes, and what if you cannot?",
+    "What do you owe the people in the open cases, and who tells them?",
+    "What has to be true about this role before you appoint the next person?"
+   ],
+   "think_about": [
+    "Roles with statutory or regulatory weight and no bench behind them",
+    "Access permissions set by the person who then leaves",
+    "Deputies as a requirement rather than a nice idea",
+    "Continuity of care for the people at the other end of a case",
+    "Policies that name a post nobody currently holds"
+   ]
+  },
+  {
+   "title": "The security incident",
+   "slug": "security-incident",
+   "category": "operational",
+   "sectors": [
+    "open-source",
+    "corporate"
+   ],
+   "difficulty": 3,
+   "minutes": 12,
+   "summary": "A live exploit, a twelve hour window, and the only person with the signing keys is unreachable.",
+   "situation": [
+    "A critical security vulnerability in your project is being actively exploited. You need to patch it, do a security release, and coordinate disclosure - all in the next 12 hours.",
+    "Your security response person is on a two-week holiday in a remote area with no internet. They're the only one who knows your security release process, has the GPG keys for signing releases, and maintains relationships with the security research community."
+   ],
+   "questions": [
+    "How do you handle the security release without your security person?",
+    "Who has access to release signing keys?",
+    "How do you coordinate disclosure without the usual relationships?",
+    "What do you tell affected users?",
+    "What changes do you make to prevent this situation?"
+   ],
+   "think_about": [
+    "Security process documentation and bus factor",
+    "Emergency access to critical credentials",
+    "Distributed security knowledge",
+    "Crisis communication"
+   ]
+  },
+  {
+   "title": "The system nobody understands",
+   "slug": "undocumented-system",
+   "category": "operational",
+   "sectors": [
+    "corporate"
+   ],
+   "difficulty": 3,
+   "minutes": 12,
+   "summary": "He wrote it in 2014, it moves nine million a month, and his notice period ends in four weeks.",
+   "situation": [
+    "A principal engineer has resigned. Four weeks' notice, leaving for a competitor, entirely within his rights.",
+    "In 2014 he wrote the reconciliation service. It sits between your billing platform and the ledger, and it moves around nine million a month. It has no owning team. It is not in the service catalogue. Its runbook is a wiki page last edited in 2019 that describes a deployment process which no longer exists.",
+    "Nobody else has ever deployed it. Twice in the last year it failed overnight and he fixed it before anyone noticed, which is why it has never been escalated. Your architecture review board has no record of it. Your business continuity plan covers the data centre, the network and the office, and says nothing about him.",
+    "His manager suggests a knowledge transfer session. He has offered two hours."
+   ],
+   "questions": [
+    "What do you actually do with four weeks?",
+    "Is two hours of his time the constraint, or is your ability to absorb it the constraint?",
+    "What do you do about the other systems like this that you have not found yet?",
+    "Who owns this service at 9am on the Monday after he leaves?",
+    "What would you have wanted your continuity plan to have said about this?"
+   ],
+   "think_about": [
+    "Business continuity plans that cover buildings and not knowledge",
+    "Systems that stay invisible because someone keeps fixing them before anyone notices",
+    "Knowledge transfer as supervised work, not a meeting",
+    "Finding the rest of them before the next resignation",
+    "Notice periods as a fixed budget you have to spend well"
+   ]
+  },
+  {
+   "title": "Sunsetting a small project",
+   "slug": "sunsetting-small",
+   "category": "governance",
+   "sectors": [
+    "open-source",
+    "small-team"
+   ],
+   "difficulty": 1,
+   "minutes": 10,
+   "summary": "Two hundred stars, fifty users, no energy left, and guilt every time an email arrives.",
+   "situation": [
+    "You created a small open source library five years ago that solves a specific problem. It has about 200 stars, maybe 50 active users based on download stats, and gets an issue or PR every few months.",
+    "You haven't touched it in two years. Your interests have moved on. You have a demanding job, young kids, and no energy for maintenance. Every time you see an email notification, you feel guilty.",
+    "The project works fine for what it does. But dependencies are outdated, there are a few open security issues, and the documentation references tools that no longer exist. It's not dead, but it's not really alive either.",
+    "You could try to find a maintainer, but you don't think it deserves one. Better alternatives exist now. But people are using it. Do you just abandon it? Archive it? Sunset it properly? What's your responsibility here?"
+   ],
+   "questions": [
+    "When is sunsetting the right choice vs finding a successor?",
+    "What do you owe to your users when you want to end a project?",
+    "How do you sunset responsibly vs just walking away?",
+    "What's the difference between archiving and abandoning?",
+    "How do you let go without guilt?"
+   ],
+   "think_about": [
+    "Not every project needs to live forever",
+    "Responsible deprecation practices",
+    "Migration paths and documentation",
+    "The guilt of letting go",
+    "When to sunset vs when to find successors"
+   ]
+  },
+  {
+   "title": "The succession planning that never happens",
+   "slug": "never-happens",
+   "category": "governance",
+   "sectors": [
+    "open-source",
+    "charity",
+    "corporate",
+    "small-team"
+   ],
+   "difficulty": 1,
+   "minutes": 10,
+   "summary": "Two years of meaning to. Everything urgent keeps winning.",
+   "situation": [
+    "You've been meaning to work on succession planning for two years. You know it's important. You've bookmarked articles, you attended a conference talk about it, you have it on your someday/maybe list.",
+    "But your project has 47 open issues, three pull requests waiting for review, a security vulnerability that needs patching, and two major features in progress. Your day job is demanding. Your family needs you. The community is waiting for the next release.",
+    "Every time you think 'I should really work on succession planning this week,' something urgent comes up. The weeks turn into months turn into years. You're now the single point of failure for a project with 50,000 users, and you're exhausted. You can't keep going, but you also can't stop."
+   ],
+   "questions": [
+    "What would it take for you to actually prioritise succession planning?",
+    "How do you create space for it when everything feels urgent?",
+    "What's the forcing function that would make you do it?",
+    "Could you build it into regular project rhythms instead of a one-time task?",
+    "What's the smallest first step you could take this week?"
+   ],
+   "think_about": [
+    "Important vs urgent",
+    "What it would take to make you stop",
+    "Building succession into ongoing work",
+    "The cost of not planning",
+    "Creating forcing functions deliberately"
+   ]
+  },
+  {
+   "title": "The chair's term ends",
+   "slug": "chairs-term-ends",
+   "category": "governance",
+   "sectors": [
+    "charity",
+    "small-team"
+   ],
+   "difficulty": 2,
+   "minutes": 10,
+   "summary": "Nine months to find a chair, a board of five, and three of them time out in the same year.",
+   "situation": [
+    "Your chair completes his second and final term in nine months. The governing document is unambiguous, and he has said he will not seek a variation.",
+    "The board has five trustees against a minimum of five. Two others reach the end of their terms in the same year, one of them your treasurer. Recruitment last year produced two applicants, neither appointable. Of the remaining trustees, one has never chaired anything, one has said openly that she does not want it, and one joined four months ago.",
+    "Board meetings currently work because the chair does most of the work between them. He drafts the agenda, chases papers, handles the difficult conversations with the chief executive one to one, and smooths over the item that would otherwise take an hour.",
+    "Nobody has ever seen the board function without him doing that."
+   ],
+   "questions": [
+    "What do you do first, recruit trustees or develop a chair?",
+    "What happens to quorum and to your governing document if the timeline slips?",
+    "How much of the chair's work is the role, and how much is him compensating for the board?",
+    "What would make this board a place someone capable would want to join?",
+    "Which of these decisions belongs to the board and which to the chair who is leaving?"
+   ],
+   "think_about": [
+    "Staggering terms so departures do not cluster",
+    "Recruiting for a board rather than for a vacancy",
+    "Work absorbed by one person that hides a structural problem",
+    "Deputy or vice chair roles as development, not decoration",
+    "The governing document as a hard constraint on your timeline"
+   ]
+  },
+  {
+   "title": "The grant relationships",
+   "slug": "grant-relationships",
+   "category": "governance",
+   "sectors": [
+    "charity"
+   ],
+   "difficulty": 2,
+   "minutes": 12,
+   "summary": "Sixty per cent of your income runs through one person's inbox and nobody else has met the funders.",
+   "situation": [
+    "Your fundraising lead has resigned to take a job at a foundation. She leaves in a month and has been entirely reasonable about it.",
+    "She holds every relationship with every funder. Sixty per cent of your income comes from four grants she wrote and manages. The reporting for all four is in her head and her personal drive. She knows which programme officer prefers a phone call, which foundation is restructuring without having announced it, and which grant has an unwritten expectation attached that does not appear in the agreement.",
+    "Her handover notes, when they arrive, are a spreadsheet of deadlines. Accurate, and it tells you nothing about the relationships.",
+    "Two reports are due in the quarter after she leaves. One funder has already asked, in passing, what her departure means for the partnership."
+   ],
+   "questions": [
+    "What do you ask her to do in her last month, and what is realistic to get?",
+    "How do you introduce her successor to funders without signalling instability?",
+    "What do you say to the funder who has already asked?",
+    "Which of these relationships should sit with a trustee or the chief executive instead of one staff member?",
+    "What would have made this a two week problem instead of a six month one?"
+   ],
+   "think_about": [
+    "Concentration risk in income as well as in people",
+    "Relationships held by an organisation vs held by a person",
+    "Handover as a set of introductions, not a document",
+    "Funders responding to competence and continuity",
+    "The unwritten expectations attached to money"
+   ]
+  },
+  {
+   "title": "The reorganisation",
+   "slug": "reorg",
+   "category": "governance",
+   "sectors": [
+    "corporate",
+    "open-source"
+   ],
+   "difficulty": 2,
+   "minutes": 12,
+   "summary": "The team is being dissolved. The product has four thousand customers and is not being dissolved.",
+   "situation": [
+    "Your team is being dissolved in the reorganisation announced last week. Six people are moving to three different groups. You find out where you are going on Friday.",
+    "The product your team built has around four thousand paying customers, including two of your largest accounts, who use it for something they describe as business critical. It is not being discontinued. Nobody has said who owns it. When you asked, you were told this would be worked through in the transition planning.",
+    "Your on-call rotation for it dissolves with the team. Three of the six are already interviewing elsewhere. The runbooks are good, because you insisted on them, which is why leadership is relaxed about this.",
+    "Renewal season for both large accounts starts in seven weeks."
+   ],
+   "questions": [
+    "What do you escalate this week, to whom, and how do you frame it so it is heard?",
+    "Who is on call for this product in a fortnight?",
+    "What do you tell the two large accounts, and who is allowed to tell them?",
+    "What do you document now, while the six people are still reachable?",
+    "Where does the responsibility sit if nobody accepts ownership?"
+   ],
+   "think_about": [
+    "Reorganisations that move people and forget what the people were carrying",
+    "Good documentation being used as a reason not to plan",
+    "Escalating a risk you cannot fix yourself",
+    "The gap between a product being supported and someone being accountable for it",
+    "Customers who find out by having an incident"
+   ]
+  },
+  {
+   "title": "Sunsetting a company-owned project",
+   "slug": "sunsetting-company",
+   "category": "governance",
+   "sectors": [
+    "open-source",
+    "corporate"
+   ],
+   "difficulty": 3,
+   "minutes": 12,
+   "summary": "Priorities shifted, the work time is gone, and the company owns the trademark.",
+   "situation": [
+    "Your company open sourced a tool three years ago as part of a strategic initiative. It got decent adoption - about 2,000 stars, an active community, some enterprise users. You've been maintaining it as part of your job.",
+    "Now company priorities have shifted. The product this tool supported is being discontinued. Your team is being reorganised. Your manager has made it clear: no more work time for this project.",
+    "You still believe in the project. The community is active. Some users depend on it for critical infrastructure. But without company support, you can't maintain it properly. You don't have time to do it unpaid, and finding outside maintainers for a company-owned project is complicated.",
+    "The code is already open source, but the company owns the trademark, the domain, and has copyright. You can't just hand it to someone else. Do you sunset it? Try to spin it out? Let it slowly die? What about the users who depend on it?"
+   ],
+   "questions": [
+    "What's your responsibility to the community vs your employer?",
+    "How do you sunset a project with active users?",
+    "Can you spin it out to a foundation or independent maintainers?",
+    "What happens to trademarks, domains, and IP?",
+    "How do you communicate this to enterprise users?"
+   ],
+   "think_about": [
+    "Corporate vs community interests",
+    "Legal and IP complications",
+    "Your personal obligations vs company decisions",
+    "Responsible deprecation with dependencies",
+    "The politics of sunsetting company projects"
+   ]
+  },
+  {
+   "title": "The corporate acquisition",
+   "slug": "corporate-acquisition",
+   "category": "governance",
+   "sectors": [
+    "open-source",
+    "corporate"
+   ],
+   "difficulty": 3,
+   "minutes": 12,
+   "summary": "Your sponsor bought your maintainer's employer, and the contract is with legal.",
+   "situation": [
+    "Your biggest corporate sponsor has acquired the company that employs your lead maintainer and two core team members. The acquisition includes an intellectual property clause that potentially affects their ability to contribute to your project.",
+    "Your lead maintainer sends you a private message: 'I think I can still contribute, but my new employment contract is complicated. Legal is reviewing it. I might need to step back from leadership roles. Can we talk?'",
+    "Meanwhile, community members are panicking on social media about the project being 'taken over by BigCorp.'"
+   ],
+   "questions": [
+    "What do you need to know about the legal situation?",
+    "How do you protect the project's independence?",
+    "Who takes over leadership if they need to step back?",
+    "How do you reassure the community?",
+    "What governance changes do you need?"
+   ],
+   "think_about": [
+    "Legal independence and project ownership",
+    "Leadership succession in complex situations",
+    "Community trust and communication",
+    "Reducing corporate key person dependencies"
+   ]
+  },
+  {
+   "title": "The founder chief executive",
+   "slug": "founder-chief-executive",
+   "category": "governance",
+   "sectors": [
+    "charity",
+    "small-team"
+   ],
+   "difficulty": 3,
+   "minutes": 12,
+   "summary": "Twenty five years in, the funders think she is the charity, and she wants to retire next spring.",
+   "situation": [
+    "Your chief executive founded the charity twenty five years ago and has run it ever since. She has told the board, in confidence, that she intends to retire next spring.",
+    "She is on first name terms with every major funder. Two of your largest grants were awarded, in the funders' own words, because of her. She sits on three sector working groups. Journalists ring her directly. Staff joined because of her. When the board disagrees with her, the board usually loses, and mostly the board has been right to lose.",
+    "There is no deputy. The senior team is three people who each run one programme well and have never been asked to think about the whole organisation. Your reserves cover four months. One of the two large grants comes up for renewal eight months after she goes.",
+    "The board has known this day was coming for a decade and has never put anything in writing."
+   ],
+   "questions": [
+    "What has to happen before she announces this publicly, and in what order?",
+    "How do you find out what she actually does, given that she has never had to write it down?",
+    "Do you recruit externally, promote internally, or restructure the role so it is a job a normal person can do?",
+    "What do you say to the funder whose renewal lands eight months in?",
+    "What does the board need to change about how it works, given it let this happen?"
+   ],
+   "think_about": [
+    "The difference between replacing a person and replacing a role",
+    "Founder transitions where the founder stays on the board",
+    "Relationships as an organisational asset that nobody has inventoried",
+    "Reserves as the thing that buys you time to do this properly",
+    "Whether the board is capable of running this process"
+   ]
+  },
+  {
+   "title": "The hostile fork",
+   "slug": "hostile-fork",
+   "category": "governance",
+   "sectors": [
+    "open-source",
+    "small-team"
+   ],
+   "difficulty": 3,
+   "minutes": 12,
+   "summary": "A co-founder walks, takes three contributors, and claims to be the real project.",
+   "situation": [
+    "Your project's co-founder, who has significant technical influence and a personal following in the community, announces they're forking the project. They claim the current leadership has 'lost sight of the original vision' and they're creating a 'true community-led' alternative.",
+    "They've convinced three of your most active contributors to join them. They're hosting their fork under a similar name, causing confusion in the community. Half your Discord server is now debating which version is 'legitimate.'"
+   ],
+   "questions": [
+    "How do you respond publicly?",
+    "What do you do about the contributors who are leaving?",
+    "How do you handle the community division?",
+    "What governance or communication failures led to this?",
+    "How do you move forward as a project?"
+   ],
+   "think_about": [
+    "Conflict resolution processes",
+    "Governance legitimacy and transparency",
+    "Community communication",
+    "Handling competing visions"
+   ]
+  },
+  {
+   "title": "The successor conversation",
+   "slug": "successor-conversation",
+   "category": "people",
+   "sectors": [
+    "open-source",
+    "charity",
+    "small-team"
+   ],
+   "difficulty": 1,
+   "minutes": 10,
+   "summary": "There is one obvious person to ask, and you keep not asking.",
+   "situation": [
+    "You've been the solo maintainer of a moderately popular open source project for four years. You're starting to burn out and need to step back, but there's no one else with maintainer access.",
+    "There's one contributor, Sarah, who's been consistently active for the past year. She's competent, trustworthy, and the community likes her. She has a full-time job and contributes in her spare time.",
+    "You know you need to ask her to become a co-maintainer, but you keep putting it off. You're worried she'll feel obligated to say yes even if she doesn't want to. You don't know how to frame it - is this a favour you're asking? A responsibility you're giving her? How do you explain the time commitment when you barely manage it yourself? And what if she says no and it makes things awkward?",
+    "Meanwhile, you're getting more exhausted and the project is suffering."
+   ],
+   "questions": [
+    "How do you approach Sarah about becoming a co-maintainer?",
+    "What do you actually say? How do you frame the conversation?",
+    "How do you describe the burden and time commitment without dressing it up?",
+    "What if she says no - then what?",
+    "How do you build in ways for her to say no comfortably?"
+   ],
+   "think_about": [
+    "The power dynamics of the ask",
+    "Describing the burden plainly vs making it appealing",
+    "Creating an easy 'no' option",
+    "Trust and vetting",
+    "What if there literally is no Sarah - what then?"
+   ]
+  },
+  {
+   "title": "The successor's doubt",
+   "slug": "successors-doubt",
+   "category": "people",
+   "sectors": [
+    "open-source",
+    "charity",
+    "corporate",
+    "small-team"
+   ],
+   "difficulty": 1,
+   "minutes": 10,
+   "summary": "On paper you are ready. You are certain you are not.",
+   "situation": [
+    "You've been asked to step up as co-maintainer of a popular open source project. You're honoured, excited, and absolutely terrified.",
+    "You've been a contributor for 18 months. You know the codebase reasonably well. The current maintainer trusts you and has been mentoring you. The community seems supportive. On paper, you're ready.",
+    "But you don't feel ready. The current maintainer makes decisions confidently. They know the history. They have relationships with sponsors and key contributors. They handle conflicts gracefully. When you look at what they do, you think 'I could never do that.'",
+    "You keep finding reasons to delay accepting the role. Maybe you should contribute for another year first? Maybe there's someone better? What if you make a mistake that breaks things for thousands of users? What if people don't respect your authority? What if you're not actually as good as the current maintainer thinks?"
+   ],
+   "questions": [
+    "How do you know if you're actually not ready vs imposter syndrome?",
+    "What support do you need to feel legitimate as a maintainer?",
+    "How do you step into authority you don't yet feel you deserve?",
+    "What would help you feel 'ready enough'?",
+    "Is anyone ever truly ready?"
+   ],
+   "think_about": [
+    "Imposter syndrome in leadership transitions",
+    "The gap between competence and confidence",
+    "What makes someone legitimate as a maintainer",
+    "Support structures for new leaders",
+    "Learning whilst leading vs being perfect first"
+   ]
+  },
+  {
+   "title": "The volunteer coordinator",
+   "slug": "volunteer-coordinator",
+   "category": "people",
+   "sectors": [
+    "charity",
+    "small-team"
+   ],
+   "difficulty": 1,
+   "minutes": 10,
+   "summary": "Ninety volunteers, one person who knows all of them, and a database nobody has updated since 2023.",
+   "situation": [
+    "Your volunteer coordinator is going on maternity leave in ten weeks. She has offered to help however she can, which is more than you are entitled to ask for.",
+    "She has run volunteering for six years. There are around ninety active volunteers. She knows which two must not be rota'd together, who is reliable in a crisis and who says yes and then does not turn up, who is grieving, who is one bad shift away from leaving, and which three could run a session on their own if asked.",
+    "Your volunteer database was last reliably updated in 2023. Rotas are built in a spreadsheet whose logic she has described to you twice and you have not followed either time.",
+    "Your busiest period starts three weeks after she goes."
+   ],
+   "questions": [
+    "What do you get written down in ten weeks, and what will never be written down?",
+    "How do you introduce a replacement to ninety people who joined because of her?",
+    "Which volunteers could take on part of this, and how do you ask without exploiting them?",
+    "What do you stop doing during the busy period?",
+    "What do you want to be true when she comes back?"
+   ],
+   "think_about": [
+    "Knowledge about people, which is the hardest kind to hand over",
+    "Planned absence as a rehearsal you actually get to prepare for",
+    "The difference between a rota and a set of relationships",
+    "Not rebuilding the role around one person again",
+    "Making the return as considered as the departure"
+   ]
+  },
+  {
+   "title": "Building the bench",
+   "slug": "building-the-bench",
+   "category": "people",
+   "sectors": [
+    "open-source",
+    "charity",
+    "small-team"
+   ],
+   "difficulty": 2,
+   "minutes": 12,
+   "summary": "Term limits worked for years. This time nobody wants the job.",
+   "situation": [
+    "Your project has been running for five years with rotating leadership using an 'up and out' model. Every team lead role has a two-year term limit. After two years, people step down and someone else steps up.",
+    "This was working well until last month, when the current project lead's term is ending in three months, and there's no obvious successor. The previous leads have all moved on to other projects or life commitments. Current active contributors are either too new or have said they're not interested in leadership.",
+    "You have regular contributors, but no one who feels ready or willing to take on the lead role. The system that worked for years is suddenly showing its limits. Do you extend the current lead's term (undermining the up and out principle)? Do you leave the role empty? Do you shut down the project?"
+   ],
+   "questions": [
+    "How do you develop potential leaders before you need them?",
+    "What does 'building the bench' actually look like in practice?",
+    "How do you make leadership roles appealing, not just burdens?",
+    "What support and structures help new leaders succeed?",
+    "How do you balance term limits with continuity?"
+   ],
+   "think_about": [
+    "Intentional leadership development",
+    "Making leadership sustainable and appealing",
+    "Onboarding and mentoring practices",
+    "Shared leadership models",
+    "When systems need adjustment"
+   ]
+  },
+  {
+   "title": "The burnout announcement",
+   "slug": "burnout-announcement",
+   "category": "people",
+   "sectors": [
+    "open-source",
+    "charity",
+    "corporate",
+    "small-team"
+   ],
+   "difficulty": 2,
+   "minutes": 10,
+   "summary": "Forty per cent of the codebase and most of the moderation walks out an hour before you read the message.",
+   "situation": [
+    "Your second-most active contributor posts in your private team chat: 'I'm completely burnt out. I can't do this anymore. I'm stepping away immediately. I know I'm leaving you in the lurch with the release next week, but I can't continue. Sorry.'",
+    "This person has been maintaining about 40% of your codebase, mentoring new contributors, and handling most of the community moderation. The release they mentioned is already delayed and has commitments to three major organisations waiting for it."
+   ],
+   "questions": [
+    "How do you respond to this person in the next hour?",
+    "Who picks up their responsibilities in the short term?",
+    "What do you do about the release deadline?",
+    "How do you prevent this happening to someone else?",
+    "What does your project need to change?"
+   ],
+   "think_about": [
+    "Emotional support for burned-out contributors",
+    "Distribution of responsibilities",
+    "Realistic capacity planning",
+    "Organisational culture and sustainability"
+   ]
+  },
+  {
+   "title": "The hovering founder",
+   "slug": "hovering-founder",
+   "category": "people",
+   "sectors": [
+    "open-source",
+    "charity",
+    "corporate",
+    "small-team"
+   ],
+   "difficulty": 2,
+   "minutes": 10,
+   "summary": "You handed it over six months ago and you are still in every thread.",
+   "situation": [
+    "You successfully transitioned leadership of your project to a new maintainer six months ago. You announced your step-back publicly, handed over all access, and explained the governance change to the community.",
+    "But you're still here. You read every issue. You comment on pull requests with 'suggestions.' When the new maintainer makes decisions you disagree with, you post in the community chat about 'concerns.' Community members still @ you directly with questions, bypassing the new maintainer. You tell yourself you're 'just helping' and 'providing institutional knowledge.'",
+    "The new maintainer hasn't said anything, but you've noticed they're less active lately. Some community members are confused about who's actually in charge."
+   ],
+   "questions": [
+    "Have you actually let go, or just said you have?",
+    "What behaviours show you're still holding on?",
+    "How do you redirect community members to the new maintainer?",
+    "How do you give advice without undermining their authority?",
+    "What does truly stepping back actually look like?"
+   ],
+   "think_about": [
+    "The difference between advisory and interfering",
+    "Community expectations and retraining them",
+    "Your own identity wrapped up in the project",
+    "When your input is helpful vs harmful",
+    "How to support without controlling"
+   ]
+  },
+  {
+   "title": "The relationships walk out",
+   "slug": "account-relationships",
+   "category": "people",
+   "sectors": [
+    "corporate",
+    "small-team"
+   ],
+   "difficulty": 2,
+   "minutes": 10,
+   "summary": "Your top account lead is going to a competitor and taking eight years of trust with her.",
+   "situation": [
+    "Your most effective account lead has resigned and is joining a direct competitor. Her non-solicitation clause covers approaching your customers for twelve months. It says nothing useful about them approaching her.",
+    "She manages your six largest accounts, worth a little over a third of recurring revenue. She has worked with some of these customers for eight years, across two employers. Her CRM notes are technically compliant and tell you almost nothing. The context lives in her head and in direct messages: who the real decision maker is, which stakeholder is hostile, what was promised verbally in 2023 that never made it into a contract.",
+    "Two of the six are up for renewal within four months. One has already emailed her personally to ask if the rumour is true."
+   ],
+   "questions": [
+    "What do you ask her to do in her notice period, and what will you actually get?",
+    "How do you introduce a successor into an eight year relationship without it reading as a downgrade?",
+    "What do you do about the verbal commitment nobody can find?",
+    "What is your answer to the customer who emails her personally?",
+    "What has to change about how relationships are held here?"
+   ],
+   "think_about": [
+    "CRM compliance vs the context that actually matters",
+    "Non-solicitation clauses as a weaker protection than they look",
+    "Multi-threading accounts before you need to",
+    "Commitments made outside the contract",
+    "Departures where the person is behaving reasonably and it still hurts"
+   ]
+  },
+  {
+   "title": "The cascade failure",
+   "slug": "cascade-failure",
+   "category": "people",
+   "sectors": [
+    "open-source",
+    "charity",
+    "corporate",
+    "small-team"
+   ],
+   "difficulty": 3,
+   "minutes": 12,
+   "summary": "You planned for losing one person. You lost three in three weeks.",
+   "situation": [
+    "Your project lead is taking a planned three-month sabbatical. You prepared for this - you have succession plans, documentation, distributed access.",
+    "Two weeks into their sabbatical, your infrastructure person's partner has a medical emergency and they need to step back indefinitely. One week after that, your community manager accepts a dream job and gives two weeks' notice.",
+    "You've suddenly lost your three most experienced people in three weeks. Your backup plans assumed losing one person, not three. The remaining team is overwhelmed and panicking."
+   ],
+   "questions": [
+    "How do you triage responsibilities across remaining people?",
+    "What work do you stop doing entirely?",
+    "How do you recruit new help urgently?",
+    "What do you tell the community?",
+    "How do you keep remaining people from burning out?"
+   ],
+   "think_about": [
+    "Dealing with multiple simultaneous losses",
+    "Prioritisation under crisis",
+    "Rapid onboarding and trust building",
+    "Team sustainability under pressure"
+   ]
+  },
+  {
+   "title": "The community resistance",
+   "slug": "community-resistance",
+   "category": "people",
+   "sectors": [
+    "open-source",
+    "charity",
+    "small-team"
+   ],
+   "difficulty": 3,
+   "minutes": 12,
+   "summary": "The handover went well and the community will not accept it.",
+   "situation": [
+    "You've successfully handed over project leadership to a new maintainer after a six-month transition. They're competent, committed, and the handoff went smoothly. You've publicly stepped back and are only responding when specifically asked.",
+    "But the community is pushing back. Long-time contributors are complaining in side channels that 'things have changed' and 'it's not the same anymore.' Users are tagging you in issues instead of the new maintainer. Some vocal community members are questioning decisions, saying 'the old leadership would never have done it this way.' A few people have forked the project, claiming the 'original vision' is lost.",
+    "Your successor messages you: 'I don't think they respect me. Should I just step down?'",
+    "The succession was technically successful, but socially it's failing."
+   ],
+   "questions": [
+    "How do you support the new maintainer without undermining them by stepping back in?",
+    "What do you say to community members who keep coming to you?",
+    "How do you help the community accept that change is normal and healthy?",
+    "Is this a you problem, a them problem, or a successor problem?",
+    "When is community resistance legitimate feedback vs resistance to any change?"
+   ],
+   "think_about": [
+    "Your role in legitimising the new leader",
+    "Community expectations and change management",
+    "The difference between supporting and rescuing",
+    "When to defend the successor's decisions vs let them handle it",
+    "How succession requires the community to change too"
+   ]
+  }
+ ]
+}

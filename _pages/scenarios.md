@@ -2,20 +2,28 @@
 title: "Scenario sessions"
 permalink: /scenarios/
 eyebrow: "Workshop material"
-standfirst: "Fifteen situations to put in front of your team and work through before one of them actually happens."
+standfirst: "Twenty five situations to put in front of your team and work through before one of them actually happens."
 ---
 
 Reading about resilience changes very little. Sitting in a room with the people you work with, being handed a plausible disaster, and discovering nobody knows who would make the call is what changes things.
 
 That is what the scenario cards are for. Each one describes a situation in enough detail to feel real, then asks the questions the situation would ask you.
 
+<p class="resource-actions">
+  <a class="btn btn-primary" href="{{ '/scenarios/cards/' | relative_url }}">Draw a card</a>
+  <a class="btn btn-ghost" href="{{ site.repo_resources }}/raw/main/deck/scenario-deck.pdf">Printable deck (PDF)</a>
+  <a class="btn btn-ghost" href="{{ site.repo_resources }}/blob/main/resources/facilitator-guide.md">Facilitator's guide</a>
+</p>
+
 ## What is in the deck
 
-**Technical and operational.** The sudden disappearance. The security incident with the signing keys nobody else holds. The formalised handover that turns out to have documented the what and none of the why.
+Every card is tagged with the settings it translates to and how hard the discussion tends to be, so you can pick for the room in front of you.
 
-**Governance, legal and finance.** The corporate acquisition with an intellectual property clause. The hostile fork. Sunsetting something a company owns. The succession planning that never quite happens.
+**Operational.** The sudden disappearance. The security incident with the signing keys nobody else holds. The system nobody understands. The sole signatory whose payroll runs on Thursday. The safeguarding lead who left on Friday.
 
-**People and community.** The burnout announcement. The cascade failure where you lose three people in three weeks. The founder who stepped back and is still here. The successor who does not feel ready.
+**Governance, legal and finance.** The founder chief executive who is the charity in the eyes of funders. The chair whose term ends with no successor. The reorganisation that dissolves the team and not the product. The hostile fork. The succession planning that never quite happens.
+
+**People and community.** The burnout announcement. The cascade failure where you lose three people in three weeks. The account relationships walking to a competitor. The founder who stepped back and is still here. The successor who does not feel ready.
 
 ## How to run a session
 
@@ -27,20 +35,15 @@ That is what the scenario cards are for. Each one describes a situation in enoug
 
 It works solo too. Pick the scenario that makes you most uncomfortable and answer it properly.
 
-<p class="resource-actions">
-  <a class="btn btn-primary" href="{{ site.repo_resources }}/blob/main/resources/scenario-cards.md">Read all fifteen scenarios</a>
-  <a class="btn btn-ghost" href="{{ '/contact/' | relative_url }}">Have a session facilitated</a>
-</p>
+## Three ways to use them
 
-## Coming next
+**[The card tool]({{ '/scenarios/cards/' | relative_url }})** draws a scenario at random, filtered to the kind of organisation you are, and gives you somewhere to write down what nobody could answer.
 
-The scenarios currently live as a single document. Being worked on now:
+**[The printed deck]({{ site.repo_resources }}/raw/main/deck/scenario-deck.pdf)** is A4, two A5 cards per sheet, with a cover card carrying the instructions. For a room, paper beats a screen.
 
-- A **printable card deck** as a PDF, one scenario per card, tagged by sector, role and difficulty
-- A **card tool on this site** for drawing scenarios, filtering by sector, and capturing what your group could not answer
-- A **facilitator's guide** with a session format, timings and debrief structure, so somebody other than me can run it
+**[The full document]({{ site.repo_resources }}/blob/main/resources/scenario-cards.md)** has all twenty five scenarios to read straight through.
 
-[Tell me what would make these useful to you]({{ site.repo_resources }}/issues/new/choose).
+If you are running the session rather than sitting in it, start with the [facilitator's guide]({{ site.repo_resources }}/blob/main/resources/facilitator-guide.md), or [have one facilitated]({{ '/contact/' | relative_url }}).
 
 ## Bring your own
 
