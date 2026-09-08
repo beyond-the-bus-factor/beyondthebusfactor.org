@@ -1,41 +1,34 @@
 ---
-title: "Beyond the Bus Factor: Building Resilient Open Source Projects"
-event_name: "GitHub Universe 2025 - Community Day"
-event_date: 2025-10-27  # Changed from 'date'
-location: "San Francisco, CA (Invite-only)"
+title: "Beyond the bus factor, building resilient open source projects"
+event_name: "GitHub Universe 2025, Community Day"
+event_date: 2025-10-27
+location: "San Francisco"
 type: "workshop"
-duration: "45 minutes"
-excerpt: "Interactive workshop on reducing single points of failure, planning for transitions, and building sustainable governance."
+duration: "45 minute interactive workshop"
+excerpt: "The first outing for this material. Mapping single points of failure, working through crisis scenarios in small groups, and leaving with one commitment for the next thirty days."
 ---
 
-## Session Details
+The session that started this project, run at GitHub Universe Community Day for open source maintainers and community managers.
 
-**Format:** Interactive unconference workshop  
-**Audience:** Open source maintainers and community managers  
-**Materials:** [View session guide](https://github.com/beyond-the-bus-factor/resilience-resources/blob/main/sessions/github-universe-2025.md)
+## What we covered
 
-## What We'll Cover
+- Mapping bus factor vulnerabilities across technical systems, governance and community
+- Working through crisis scenarios in small groups
+- Designing systems that distribute knowledge as a matter of course
+- Committing to one concrete action within thirty days
 
-- Mapping your bus factor vulnerabilities
-- Practising crisis response scenarios
-- Building sustainable systems collaboratively
-- Creating actionable plans
+## Materials
 
-## Outcomes
+The full facilitation guide is published, so anyone can run this session themselves.
 
-Participants leave with:
-- Framework for auditing bus factor vulnerabilities
-- Templates for succession planning
-- One specific action to implement in 30 days
-- Connection to a community facing the same challenges
+<p class="resource-actions">
+  <a class="btn btn-primary btn-sm" href="{{ site.repo_resources }}/blob/main/sessions/github-universe-2025.md">Facilitation guide</a>
+  <a class="btn btn-ghost btn-sm" href="{{ site.repo_resources }}/blob/main/resources/scenario-cards.md">Scenario cards</a>
+</p>
 
-## Resources
+## Resources used
 
-All materials from this session are freely available:
-
-- [Bus Factor Audit](https://github.com/beyond-the-bus-factor/resilience-resources/blob/main/resources/bus-factor-audit.md)
-- [Legacy Checklist](https://github.com/beyond-the-bus-factor/resilience-resources/blob/main/resources/legacy-checklist.md)
-- [Succession Planning Guide](https://github.com/beyond-the-bus-factor/resilience-resources/blob/main/resources/succession-planning-guide.md)
-- [Scenario Cards](https://github.com/beyond-the-bus-factor/resilience-resources/blob/main/resources/scenario-cards.md)
-
-[View full session materials →](https://github.com/beyond-the-bus-factor/resilience-resources/blob/main/sessions/github-universe-2025.md){: .btn .btn--primary}
+{% assign used = "bus-factor-audit,legacy-checklist,succession-planning-guide,scenario-cards" | split: "," %}
+{% for slug in used %}{% assign r = site.data.resources | where: "slug", slug | first %}
+- [{{ r.title }}]({{ site.repo_resources }}/blob/main/resources/{{ r.file }})
+{%- endfor %}

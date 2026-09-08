@@ -1,102 +1,43 @@
 ---
-layout: single
 title: "Resources"
 permalink: /resources/
-toc: true
-toc_label: "On This Page"
-toc_icon: "list"
+eyebrow: "Free to use, free to adapt"
+standfirst: "Six resources for finding and reducing key person risk. All released under CC0, so you can copy them, rewrite them and use them internally with no attribution."
+body_class: "resources-page"
 ---
 
-## Core Resources
+Most people work through these in order. The audit tells you where you are exposed, the checklist covers the immediate risks, and the succession guide is the longer piece of work.
 
-All resources are freely available under CC0 license. Use them, adapt them, share them.
+<ul class="resource-list">
+{% for r in site.data.resources %}
+  <li id="{{ r.slug }}">
+    <div class="resource-head">
+      {% include icon.html name=r.icon %}
+      <div>
+        <p class="card-kind">{{ r.kind }} · {{ r.time }}</p>
+        <h2>{{ r.title }}</h2>
+        <p>{{ r.summary }}</p>
+        <p class="use-when"><strong>Use this when:</strong> {{ r.use_when }}</p>
+        <p class="resource-actions">
+          <a class="btn btn-primary btn-sm" href="{{ site.repo_resources }}/blob/main/resources/{{ r.file }}">Read it</a>
+          <a class="btn btn-ghost btn-sm" href="{{ site.repo_resources }}/edit/main/resources/{{ r.file }}">Suggest a change</a>
+        </p>
+      </div>
+    </div>
+  </li>
+{% endfor %}
+</ul>
 
-### Audits
+## Making these fit your organisation
 
-#### [Bus Factor Audit](https://github.com/beyond-the-bus-factor/resilience-resources/blob/main/resources/bus-factor-audit.md)
+The resources are written in neutral language and then translated. Each one is being given a short overlay for open source projects, for charities and NGOs, and for companies, covering the terms that change and the risks that only show up in that setting.
 
-A comprehensive framework for identifying single points of failure across:
-- Technical systems (deployment, infrastructure, access)
-- Governance structures (decision-making, documentation)
-- Community relationships (moderation, contributor management)
-
-**Use this when:** You want to understand where your project is vulnerable.
-
----
-
-### Practical guides
-
-#### [Setting up legacy contacts](https://github.com/beyond-the-bus-factor/resilience-resources/blob/main/resources/setting-up-legacy-contacts.md)
-
-A detailed list of how to set up legacy contacts across digital platforms including:
-- Technical systems (code repositories, infrastructure, hosting providers etc)
-- Social media (personal accounts, pages etc)
-- Password managers (1password, Lastpass, Bitwarden etc)
-- IT ecosystems (Apple, Google, Samsung etc)
-
-**Use this when:** You want to ensure that, in the event something happens to you, someone is able to access your important accounts - both personal and organisational.
-
----
-
-#### [Sunsetting a project](https://github.com/beyond-the-bus-factor/resilience-resources/blob/main/resources/sunsetting-a-project.md)
-
-Useful resources and tips when you're considering shutting down or sunsetting an open source project including:
-
-- When is the right time
-- Making and communicating the decision
-- Communication throughout the process
-- How to close everything down
-
-**Use this when:** You are thinking about closing down an open source project.
-
----
-
-### Succession planning
-
-#### [Legacy Checklist](https://github.com/beyond-the-bus-factor/resilience-resources/blob/main/resources/legacy-checklist.md)
-
-The uncomfortable but essential preparation for if you die or become suddenly incapacitated:
-- Critical access and credentials
-- Communication protocols
-- Technical continuity
-- Governance handoff
-
-**Use this when:** You're the person holding critical knowledge or access.
-
----
-
-#### [Succession Planning Guide](https://github.com/beyond-the-bus-factor/resilience-resources/blob/main/resources/succession-planning-guide.md)
-
-Templates and processes for three types of transitions:
-- Planned departures (90-day handoff timeline)
-- Unexpected absences (emergency protocols)
-- Gradual transitions (leadership evolution)
-
-**Use this when:** Someone is stepping back or you're planning for inevitable changes.
-
----
-
-
-### Worshop resources
-#### [Scenario Cards](https://github.com/beyond-the-bus-factor/resilience-resources/blob/main/resources/scenario-cards.md)
-
-Ten workshop scenarios for practising crisis response:
-- The sudden disappearance
-- The burnout announcement
-- The cascade failure
-- The hostile fork
-- And more...
-
-**Use this when:** You want to stress-test your project's resilience with your team.
-
----
+If your sector is not covered well yet, [tell me what is missing]({{ site.repo_resources }}/issues/new/choose). That is how the rest of it got written.
 
 ## Contributing
 
-These resources improve when more people share their experience.
+These improve when more people put their experience into them.
 
-- **[Open an Issue](https://github.com/beyond-the-bus-factor/resilience-resources/issues)** - Suggest improvements or report unclear sections
-- **[Join Discussions](https://github.com/beyond-the-bus-factor/resilience-resources/discussions)** - Share your stories and learn from others
-- **[Submit a PR](https://github.com/beyond-the-bus-factor/resilience-resources/pulls)** - Add your expertise directly
-
-[View on GitHub →](https://github.com/beyond-the-bus-factor/resilience-resources){: .btn .btn--primary}
+- [Open an issue]({{ site.repo_resources }}/issues/new/choose) to suggest a resource, flag something unclear, or share a scenario
+- [Join a discussion]({{ site.repo_resources }}/discussions) about what has worked and what has not
+- [Open a pull request]({{ site.repo_resources }}/pulls) to add your expertise directly

@@ -1,0 +1,28 @@
+{
+  "defaults": {
+    "standard": "WCAG2AA",
+    "runners": [
+      "axe",
+      "htmlcs"
+    ],
+    "timeout": 30000,
+    "chromeLaunchConfig": {
+      "args": [
+        "--no-sandbox",
+        "--disable-dev-shm-usage"
+      ]
+    },
+    "ignore": []
+  },
+  "urls": [
+    "http://127.0.0.1:4010/",
+    "http://127.0.0.1:4010/resources/",
+    "http://127.0.0.1:4010/scenarios/",
+    "http://127.0.0.1:4010/sessions/",
+    "http://127.0.0.1:4010/sessions/github-universe-2025/",
+    "http://127.0.0.1:4010/about/",
+    "http://127.0.0.1:4010/contact/",
+    "http://127.0.0.1:4010/updates/",
+    "http://127.0.0.1:4010/updates/launching-beyond-the-bus-factor/"
+  ]
+}

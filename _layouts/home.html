@@ -1,0 +1,89 @@
+---
+layout: default
+---
+<section class="hero">
+  <div class="hero-figure" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow">{{ page.eyebrow }}</p>
+    <h1>{{ page.heading }}</h1>
+    <p class="hero-lede">{{ page.lede }}</p>
+    <p class="hero-actions">
+      <a class="btn btn-primary" href="{{ '/resources/' | relative_url }}">Browse the resources</a>
+      <a class="btn btn-ghost" href="{{ '/scenarios/' | relative_url }}">Run a scenario session</a>
+    </p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Start here</h2>
+      <p>Six resources, all free to copy and adapt. Most people work through them in this order.</p>
+    </div>
+    <ol class="cards">
+      {% for r in site.data.resources %}{% if r.featured %}
+      <li class="card">
+        <span class="card-icon">{% include icon.html name=r.icon %}</span>
+        <p class="card-kind">{{ r.kind }} · {{ r.time }}</p>
+        <h3><a href="{{ '/resources/' | relative_url }}#{{ r.slug }}">{{ r.title }}</a></h3>
+        <p>{{ r.summary }}</p>
+      </li>
+      {% endif %}{% endfor %}
+    </ol>
+    <p class="section-more"><a class="more" href="{{ '/resources/' | relative_url }}">See all six resources {% include icon.html name='arrow' %}</a></p>
+  </div>
+</section>
+
+<section class="band band-tint">
+  <div class="wrap two-col">
+    <div>
+      <h2>{{ page.why_heading }}</h2>
+      <div class="prose">{{ content }}</div>
+    </div>
+    <aside class="sectors">
+      <p class="sectors-head">Written for four kinds of organisation</p>
+      <ul>
+        <li><strong>Open source projects</strong><span>Maintainers, release keys, governance and forks</span></li>
+        <li><strong>Charities and NGOs</strong><span>Trustees, funders, regulators and safeguarding leads</span></li>
+        <li><strong>Companies</strong><span>The key person risk your continuity plan does not cover</span></li>
+        <li><strong>Small teams and collectives</strong><span>Where one person holds most of the operation</span></li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+{% assign today = site.time | date: "%Y-%m-%d" %}
+{% assign upcoming = "" | split: "" %}
+{% for s in site.sessions %}{% assign d = s.event_date | date: "%Y-%m-%d" %}{% if d >= today %}{% assign upcoming = upcoming | push: s %}{% endif %}{% endfor %}
+<section class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Workshops and sessions</h2>
+      {% if upcoming.size > 0 %}<p>Where you can work through this material with other people.</p>
+      {% else %}<p>Nothing scheduled at the moment. These sessions run at conferences, inside organisations, and for community groups.</p>{% endif %}
+    </div>
+    {% if upcoming.size > 0 %}
+    <ul class="sessions">
+      {% for s in upcoming %}
+      <li>
+        <p class="card-kind">{{ s.event_date | date: "%-d %B %Y" }} · {{ s.location }}</p>
+        <h3><a href="{{ s.url | relative_url }}">{{ s.title }}</a></h3>
+        <p>{{ s.excerpt | strip_html }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    <p class="section-more"><a class="more" href="{{ '/contact/' | relative_url }}">Arrange a session for your team or event {% include icon.html name='arrow' %}</a></p>
+  </div>
+</section>
+
+<section class="band band-dark">
+  <div class="wrap cta">
+    <h2>These get better when more people write them</h2>
+    <p>Everything here came out of transitions that really happened. If you have been through one, the version of this that helps the next person is the one with your experience in it.</p>
+    <p class="hero-actions">
+      <a class="btn btn-primary" href="{{ site.repo_resources }}/blob/main/CONTRIBUTING.md">How to contribute</a>
+      <a class="btn btn-ghost-light" href="{{ site.repo_resources }}/discussions">Join the discussion</a>
+    </p>
+  </div>
+</section>

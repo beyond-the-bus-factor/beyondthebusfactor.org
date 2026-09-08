@@ -1,0 +1,27 @@
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-about">
+      <p class="footer-title">Beyond the Bus Factor</p>
+      <p>{{ site.tagline }}</p>
+      <p class="footer-licence">Every resource here is released under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>. Take them, adapt them, put your own name on them.</p>
+    </div>
+    <div class="footer-links">
+      <p class="footer-title">Resources</p>
+      <ul>
+        {% for r in site.data.resources %}<li><a href="{{ '/resources/' | relative_url }}#{{ r.slug }}">{{ r.title }}</a></li>{% endfor %}
+      </ul>
+    </div>
+    <div class="footer-links">
+      <p class="footer-title">Elsewhere</p>
+      <ul>
+        <li><a href="{{ site.repo_resources }}">Resource repository</a></li>
+        <li><a href="{{ site.org_url }}">GitHub organisation</a></li>
+        <li><a href="{{ '/feed.xml' | relative_url }}">Updates feed</a></li>
+        <li><a href="{{ '/contact/' | relative_url }}">Get in touch</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <p>Maintained by <a href="https://silavapi.co.uk">Sīlavāpi Cheesley</a>. Built in the open.</p>
+  </div>
+</footer>
