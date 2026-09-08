@@ -409,6 +409,8 @@ p { margin: 0 0 1.1em; }
   font-size: 1.2rem; line-height: 1.55; color: var(--ink-2);
   margin: 0.75rem 0 0; max-width: 38ch;
 }
+/* On a wide page the measure is wider, so a 38ch standfirst looks pinched. */
+.wrap.medium .standfirst { max-width: 52ch; }
 
 .meta { display: grid; gap: 0.6rem 2rem; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); margin: 1.75rem 0 0; }
 .meta div { margin: 0; }
@@ -635,3 +637,29 @@ p { margin: 0 0 1.1em; }
 .prose .card h3,
 .prose .sessions h3,
 .prose .scard h3 { margin-top: 0; }
+
+/* Shown on pages generated from the resources repository. */
+.source-note {
+  margin: 3rem 0 0; padding: 1.5rem;
+  background: var(--surface); border: 1px solid var(--rule);
+  border-radius: var(--radius);
+}
+.source-note p { font-size: 0.94rem; color: var(--ink-2); }
+.source-note p:last-child { margin: 1rem 0 0; }
+.source-note strong { color: var(--ink); font-weight: 600; }
+
+/* Resource tables are wide. Let them scroll rather than push the page. */
+.prose table { display: block; overflow-x: auto; max-width: 100%; }
+@media (min-width: 48rem) { .prose table { display: table; } }
+
+/* Checklist items. Kramdown would render these as disabled checkboxes with no
+   label, which fails WCAG hundreds of times over across these documents.
+   Nothing is tickable either way, so the box is decoration and the text is
+   the content. */
+.task-box {
+  display: inline-block; vertical-align: -0.12em;
+  width: 0.95em; height: 0.95em; margin-right: 0.35em;
+  border: 1.5px solid var(--ink-3); border-radius: 3px;
+}
+.task-box.is-done { background: var(--brand); border-color: var(--brand); }
+.prose li:has(.task-box) { list-style: none; margin-left: -1.15rem; }

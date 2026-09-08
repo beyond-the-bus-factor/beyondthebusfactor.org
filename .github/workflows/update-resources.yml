@@ -1,0 +1,73 @@
+name: Update resources
+
+# The resource markdown lives in resilience-resources and is pinned here as a
+# submodule. This notices when that repository moves and opens a pull request
+# bumping the pointer, so a change is reviewed before it appears on the site
+# and a bad commit over there cannot break this one on its own.
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Move the submodule to the latest main
+        id: bump
+        run: |
+          before=$(git -C _resources rev-parse HEAD)
+          git submodule update --remote --recursive _resources
+          after=$(git -C _resources rev-parse HEAD)
+          if [ "$before" = "$after" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Already up to date at ${before:0:7}."
+            exit 0
+          fi
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "before=${before:0:7}" >> "$GITHUB_OUTPUT"
+          echo "after=${after:0:7}" >> "$GITHUB_OUTPUT"
+          {
+            echo 'log<<COMMITS'
+            git -C _resources log --oneline --no-merges "$before..$after" | head -20
+            echo 'COMMITS'
+          } >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-python@v5
+        if: steps.bump.outputs.changed == 'true'
+        with:
+          python-version: '3.12'
+
+      - name: Confirm the pages still generate
+        if: steps.bump.outputs.changed == 'true'
+        run: python3 script/build-resource-pages.py
+
+      - name: Open a pull request
+        if: steps.bump.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: update-resources
+          title: "Update the resources to ${{ steps.bump.outputs.after }}"
+          commit-message: |
+            Update the resources submodule to ${{ steps.bump.outputs.after }}
+
+            Opened automatically because resilience-resources moved.
+          body: |
+            The resources repository has moved from `${{ steps.bump.outputs.before }}` to `${{ steps.bump.outputs.after }}`.
+
+            ```
+            ${{ steps.bump.outputs.log }}
+            ```
+
+            The pages generate from this commit, and the checks on this pull request build and test the site against it. Merging publishes the change.
+
+            [Compare on GitHub](https://github.com/beyond-the-bus-factor/resilience-resources/compare/${{ steps.bump.outputs.before }}...${{ steps.bump.outputs.after }})
+          delete-branch: true

@@ -1,5 +1,21 @@
 # beyondthebusfactor.org
 
+## The resources
+
+The resource markdown lives in [resilience-resources](https://github.com/beyond-the-bus-factor/resilience-resources) and is pinned here as the `_resources` submodule. Nothing is copied into this repository. `script/build-resource-pages.py` reads the submodule and writes `generated/`, which is ignored by git and rebuilt every time.
+
+```
+git clone --recurse-submodules https://github.com/beyond-the-bus-factor/beyondthebusfactor.org.git
+
+# or, in an existing clone
+git submodule update --init --recursive
+
+python3 script/build-resource-pages.py
+bundle exec jekyll build
+```
+
+Editing a resource means opening a pull request against resilience-resources. A daily job here notices when that repository moves and opens a pull request bumping the pointer, so the change is reviewed before it reaches the site.
+
 ## Checks
 
 ```
@@ -7,6 +23,7 @@ python3 script/check-house-style.py       # house style, every file we write pro
 python3 script/check-data.py              # the _data files that drive pages
 python3 script/test-check-house-style.py  # that the checkers still work
 python3 script/test-check-data.py
+python3 script/test-build-resource-pages.py  # the resource page generator and its link rewriting
 python3 script/test-analytics.py          # analytics only loads when configured
 npm run a11y                              # WCAG 2 AA across every page
 ```

@@ -16,7 +16,7 @@ So the [bus factor audit]({{ '/resources/' | relative_url }}#bus-factor-audit) i
   <li class="card">
     <span class="card-icon">{% include icon.html name=s.icon %}</span>
     <p class="card-kind">Overlay</p>
-    <h3><a href="{{ site.repo_resources }}/blob/main/resources/sectors/{{ s.file }}">{{ s.name }}</a></h3>
+    <h3><a href="{{ '/sectors/' | append: s.slug | append: '/' | relative_url }}">{{ s.name }}</a></h3>
     <p>{{ s.blurb }}</p>
     <p class="card-failure"><strong>The usual failure:</strong> {{ s.failure }}</p>
   </li>
@@ -25,7 +25,7 @@ So the [bus factor audit]({{ '/resources/' | relative_url }}#bus-factor-audit) i
 
 ## How to use one
 
-Read the overlay first, which takes a few minutes, then work through the [audit]({{ site.repo_resources }}/blob/main/resources/bus-factor-audit.md) with its extra rows added to yours. The overlay ends by naming the [scenario cards]({{ '/scenarios/' | relative_url }}) worth running first for that setting.
+Read the overlay first, which takes a few minutes, then work through the [audit]({{ '/resources/bus-factor-audit/' | relative_url }}) with its extra rows added to yours. The overlay ends by naming the [scenario cards]({{ '/scenarios/' | relative_url }}) worth running first for that setting.
 
 If you sit across two of these, and plenty of organisations do, read both. They overlap less than you would expect.
 

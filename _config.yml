@@ -47,6 +47,8 @@ include:
   - _pages
 
 exclude:
+  - _resources          # the submodule, read by script/build-resource-pages.py
+  - script
   - Gemfile
   - Gemfile.lock
   - vendor

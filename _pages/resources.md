@@ -21,7 +21,7 @@ The audit is written to work whatever you run. Read it alongside the [overlay fo
         <p>{{ r.summary }}</p>
         <p class="use-when"><strong>Use this when:</strong> {{ r.use_when }}</p>
         <p class="resource-actions">
-          <a class="btn btn-primary btn-sm" href="{{ site.repo_resources }}/blob/main/resources/{{ r.file }}">Read it</a>
+          <a class="btn btn-primary btn-sm" href="{{ '/resources/' | append: r.slug | append: '/' | relative_url }}">Read it</a>
           <a class="btn btn-ghost btn-sm" href="{{ site.repo_resources }}/edit/main/resources/{{ r.file }}">Suggest a change</a>
         </p>
       </div>

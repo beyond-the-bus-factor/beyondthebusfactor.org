@@ -9,6 +9,15 @@ layout: default
       {% if page.standfirst %}<p class="standfirst">{{ page.standfirst }}</p>{% endif %}
     </header>
     <div class="prose">{{ content }}</div>
+    {% if page.source_path %}
+    <aside class="source-note">
+      <p><strong>This page is the markdown from the <a href="{{ site.repo_resources }}">resilience resources repository</a>, rendered here.</strong> Everything is released under CC0, so take it, adapt it, and put your own name on it.</p>
+      <p class="resource-actions">
+        <a class="btn btn-ghost btn-sm" href="{{ site.repo_resources }}/edit/main/{{ page.source_path }}">Suggest a change</a>
+        <a class="btn btn-ghost btn-sm" href="{{ site.repo_resources }}/blob/main/{{ page.source_path }}">View the source</a>
+      </p>
+    </aside>
+    {% endif %}
   </div>
 </article>
 {% if page.body_class == 'cards-tool' %}<script src="{{ '/assets/js/cards.js' | relative_url }}" defer></script>{% endif %}

@@ -9,7 +9,7 @@ body_class: "cards-tool"
 <div class="tool" id="tool">
   <noscript>
     <p class="tool-fallback">This tool needs JavaScript. All twenty five scenarios are readable without it in
-    <a href="{{ site.repo_resources }}/blob/main/resources/scenario-cards.md">the scenario cards document</a>,
+    <a href="{{ '/resources/scenario-cards/' | relative_url }}">the scenario cards document</a>,
     and the <a href="{{ site.repo_resources }}/raw/main/deck/scenario-deck.pdf">printable deck</a> is a PDF.</p>
   </noscript>
 </div>
@@ -40,6 +40,6 @@ body_class: "cards-tool"
 
 ## Running this with a group
 
-There is a [facilitator's guide]({{ site.repo_resources }}/blob/main/resources/facilitator-guide.md) with session formats, timings, and what to do when a group starts arguing with the scenario instead of working it.
+There is a [facilitator's guide]({{ '/resources/facilitator-guide/' | relative_url }}) with session formats, timings, and what to do when a group starts arguing with the scenario instead of working it.
 
 For a room, the printed deck works better than a screen. The [PDF]({{ site.repo_resources }}/raw/main/deck/scenario-deck.pdf) is A4, two A5 cards per sheet, with a cover card carrying the instructions.
