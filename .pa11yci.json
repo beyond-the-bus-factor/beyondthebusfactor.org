@@ -26,6 +26,17 @@
     "http://127.0.0.1:4010/contact/",
     "http://127.0.0.1:4010/updates/",
     "http://127.0.0.1:4010/updates/launching-beyond-the-bus-factor/",
-    "http://127.0.0.1:4010/privacy/"
+    "http://127.0.0.1:4010/privacy/",
+    "http://127.0.0.1:4010/resources/bus-factor-audit/",
+    "http://127.0.0.1:4010/resources/succession-planning-guide/",
+    "http://127.0.0.1:4010/resources/legacy-checklist/",
+    "http://127.0.0.1:4010/resources/set-up-legacy-contacts/",
+    "http://127.0.0.1:4010/resources/scenario-cards/",
+    "http://127.0.0.1:4010/resources/facilitator-guide/",
+    "http://127.0.0.1:4010/resources/sunsetting-a-project/",
+    "http://127.0.0.1:4010/sectors/open-source/",
+    "http://127.0.0.1:4010/sectors/charity-ngo/",
+    "http://127.0.0.1:4010/sectors/company/",
+    "http://127.0.0.1:4010/sectors/small-team/"
   ]
 }

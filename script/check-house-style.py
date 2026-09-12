@@ -18,7 +18,15 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SKIP_DIRS = {".git", "node_modules", "_site", "vendor", ".jekyll-cache", ".bundle"}
+SKIP_DIRS = {
+    ".git", "node_modules", "_site", "vendor", ".jekyll-cache", ".bundle",
+    # Another repository, with its own copy of these rules and its own CI.
+    # Enforcing ours over there would fail this repo's build for a change
+    # nobody made here.
+    "_resources",
+    # Build output, generated from _resources.
+    "generated",
+}
 SKIP_FILES = {"package-lock.json", "Gemfile.lock", ".house-style"}
 
 # Everything we write prose into. Data files the site renders count too.

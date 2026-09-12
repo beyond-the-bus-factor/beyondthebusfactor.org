@@ -12,7 +12,7 @@ That is what the scenario cards are for. Each one describes a situation in enoug
 <p class="resource-actions">
   <a class="btn btn-primary" href="{{ '/scenarios/cards/' | relative_url }}">Draw a card</a>
   <a class="btn btn-ghost" href="{{ site.repo_resources }}/raw/main/deck/scenario-deck.pdf">Printable deck (PDF)</a>
-  <a class="btn btn-ghost" href="{{ site.repo_resources }}/blob/main/resources/facilitator-guide.md">Facilitator's guide</a>
+  <a class="btn btn-ghost" href="{{ '/resources/facilitator-guide/' | relative_url }}">Facilitator's guide</a>
 </p>
 
 ## What is in the deck
@@ -41,9 +41,9 @@ It works solo too. Pick the scenario that makes you most uncomfortable and answe
 
 **[The printed deck]({{ site.repo_resources }}/raw/main/deck/scenario-deck.pdf)** is A4, two A5 cards per sheet, with a cover card carrying the instructions. For a room, paper beats a screen.
 
-**[The full document]({{ site.repo_resources }}/blob/main/resources/scenario-cards.md)** has all twenty five scenarios to read straight through.
+**[The full document]({{ '/resources/scenario-cards/' | relative_url }})** has all twenty five scenarios to read straight through.
 
-If you are running the session rather than sitting in it, start with the [facilitator's guide]({{ site.repo_resources }}/blob/main/resources/facilitator-guide.md), or [have one facilitated]({{ '/contact/' | relative_url }}).
+If you are running the session rather than sitting in it, start with the [facilitator's guide]({{ '/resources/facilitator-guide/' | relative_url }}), or [have one facilitated]({{ '/contact/' | relative_url }}).
 
 ## Bring your own
 
