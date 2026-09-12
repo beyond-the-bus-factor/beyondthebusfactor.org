@@ -1,0 +1,104 @@
+#!/usr/bin/env python3
+"""Check that analytics only loads when it is meant to.
+
+    python3 script/test-analytics.py
+
+The important case is the first one. Shipping a third party script nobody
+asked for is a privacy problem, not a bug, so "nothing is configured" has to
+mean "nothing is loaded" and that needs proving rather than assuming.
+
+Each case rewrites _config.yml, builds, and looks at what actually reached
+the HTML. The config is restored whatever happens.
+"""
+
+import os
+import re
+import subprocess
+import sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CONFIG = os.path.join(ROOT, "_config.yml")
+INDEX = os.path.join(ROOT, "_site", "index.html")
+PRIVACY = os.path.join(ROOT, "_site", "privacy", "index.html")
+
+# Matches the analytics block whatever it is currently set to, so changing the
+# default provider does not turn this test into a no-op without anyone noticing.
+BLOCK = re.compile(r"^analytics:\n(?:[ \t]+\w+:.*\n)+", re.M)
+
+EMPTY = "analytics:\n  provider:\n  endpoint:\n  token:\n"
+GOAT = "analytics:\n  provider: goatcounter\n  endpoint: https://example.goatcounter.com/count\n  token:\n"
+CLOUD = "analytics:\n  provider: cloudflare\n  endpoint:\n  token: example-token\n"
+NO_ID = "analytics:\n  provider: goatcounter\n  endpoint:\n  token:\n"
+UNKNOWN = "analytics:\n  provider: nonsense\n  endpoint: x\n  token: y\n"
+
+#            label                              env            config   script loads        configured?
+CASES = [
+    ("nothing configured loads nothing",        "production",  EMPTY,   None,                False),
+    ("goatcounter loads in production",         "production",  GOAT,    "goatcounter",       True),
+    ("goatcounter stays out of development",    "development", GOAT,    None,                True),
+    ("cloudflare loads in production",          "production",  CLOUD,   "cloudflareinsights", True),
+    ("a provider with no id loads nothing",     "production",  NO_ID,   None,                False),
+    ("an unknown provider loads nothing",       "production",  UNKNOWN, None,                False),
+]
+
+FAILURES = []
+
+
+def main():
+    with open(CONFIG, encoding="utf-8") as fh:
+        original = fh.read()
+    if not BLOCK.search(original):
+        print("  FAIL no analytics block found in _config.yml, so this test would")
+        print("       pass without checking anything. Update the test.")
+        return 1
+
+    try:
+        for label, env, block, expected, configured in CASES:
+            with open(CONFIG, "w", encoding="utf-8") as fh:
+                fh.write(BLOCK.sub(block, original, count=1))
+            result = subprocess.run(
+                ["bundle", "exec", "jekyll", "build"],
+                cwd=ROOT, env=dict(os.environ, JEKYLL_ENV=env), capture_output=True)
+            if result.returncode != 0:
+                print(f"  FAIL {label}: the build failed")
+                FAILURES.append(label)
+                continue
+            with open(INDEX, encoding="utf-8") as fh:
+                html = fh.read()
+            found = sorted(set(re.findall(r"goatcounter|cloudflareinsights", html)))
+            ok = (found == [expected]) if expected else (found == [])
+            print(("  ok   " if ok else "  FAIL ") + label)
+            if not ok:
+                FAILURES.append(label)
+                print(f"         expected {expected or 'nothing'}, found {found or 'nothing'}")
+
+            # The privacy page has to describe what a visitor gets, which is the
+            # production answer whatever this build was. It once told people they
+            # were being counted while the script loaded nothing.
+            with open(PRIVACY, encoding="utf-8") as fh:
+                privacy = re.sub(r"<[^>]+>", "", fh.read())
+            claims_counting = "counts page views" in privacy
+            claims_nothing = "Nothing. There is no analytics" in privacy
+            should_count = configured is True
+            agrees = claims_counting if should_count else claims_nothing
+            label2 = f"{label}, and the privacy page agrees"
+            print(("  ok   " if agrees else "  FAIL ") + label2)
+            if not agrees:
+                FAILURES.append(label2)
+                print(f"         page says {'counting' if claims_counting else 'nothing collected'}, "
+                      f"expected {'counting' if should_count else 'nothing collected'}")
+    finally:
+        with open(CONFIG, "w", encoding="utf-8") as fh:
+            fh.write(original)
+        subprocess.run(["bundle", "exec", "jekyll", "build"], cwd=ROOT, capture_output=True)
+
+    print()
+    if FAILURES:
+        print(f"{len(FAILURES)} failed")
+        return 1
+    print("Analytics loads only when deliberately configured.")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

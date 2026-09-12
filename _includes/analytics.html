@@ -1,0 +1,25 @@
+{%- comment -%}
+  Renders nothing unless analytics is configured in _config.yml and this is a
+  production build. No configuration means no third party script and nothing
+  collected, which is the safe default and the state the site ships in.
+
+  Both supported options are cookie free and collect no personal data, so no
+  consent banner is needed. If that ever stops being true, this include is
+  the wrong place to solve it: get advice first.
+{%- endcomment -%}
+{%- assign analytics_on = "" -%}
+{%- capture analytics_on -%}{%- include analytics-on.html -%}{%- endcapture -%}
+{%- if jekyll.environment == "production" and analytics_on == "yes" -%}
+  {%- case site.analytics.provider -%}
+    {%- when "goatcounter" -%}
+      {%- if site.analytics.endpoint -%}
+<script data-goatcounter="{{ site.analytics.endpoint }}"
+        async src="//gc.zgo.at/count.js"></script>
+      {%- endif -%}
+    {%- when "cloudflare" -%}
+      {%- if site.analytics.token -%}
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"token": "{{ site.analytics.token }}"}'></script>
+      {%- endif -%}
+  {%- endcase -%}
+{%- endif -%}

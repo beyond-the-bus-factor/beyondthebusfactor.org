@@ -25,6 +25,7 @@
     "http://127.0.0.1:4010/about/",
     "http://127.0.0.1:4010/contact/",
     "http://127.0.0.1:4010/updates/",
-    "http://127.0.0.1:4010/updates/launching-beyond-the-bus-factor/"
+    "http://127.0.0.1:4010/updates/launching-beyond-the-bus-factor/",
+    "http://127.0.0.1:4010/privacy/"
   ]
 }

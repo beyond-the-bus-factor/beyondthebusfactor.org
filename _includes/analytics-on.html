@@ -1,0 +1,15 @@
+{%- comment -%}
+  Outputs "yes" when analytics is actually configured, and nothing otherwise.
+
+  Both the script include and the privacy page ask this, so they cannot
+  disagree. They did: a provider set with no token loaded nothing while the
+  privacy page told people they were being counted.
+
+  Deliberately does not consider the environment. It answers "is this on for
+  a visitor", and the privacy page has to describe production whatever the
+  local build is doing.
+{%- endcomment -%}
+{%- case site.analytics.provider -%}
+  {%- when "goatcounter" -%}{%- if site.analytics.endpoint -%}yes{%- endif -%}
+  {%- when "cloudflare" -%}{%- if site.analytics.token -%}yes{%- endif -%}
+{%- endcase -%}
